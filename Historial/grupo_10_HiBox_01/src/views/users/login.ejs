@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../partials/head', {title: "Login", style: "/css/styles-users.css"}) %>
+    
+<body>
+       
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %>    
+    <main>
+        <section class="conteiner-users">
+            <h3>Login</h3>
+            <form class="form-login" action="/login" method="post">
+                
+                <!--<label for="uname">Correo Electronico</label>-->
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+
+                <!--<label for="psw"><b>Contraseña</b></label>-->
+                <input type="password" name="psw" placeholder="Contraseña" required>
+
+                <button type="submit" class="enviar">Enviar</button>
+                
+                <div class="recuerdame">
+                <input type="checkbox" checked="checked" name="recuerdame" id="recuerdame" value="recuerdame">
+                <label for="recuerdame">Recuerdame</label>
+                </div>
+                
+                <button type="reset" class="borrar">Borrar</button>
+
+                <p><a href="#">¿Ha olvidado su contraseña?</a></p>
+            </form>
+        </section>
+        
+    </main>
+    
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>  
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('../partials/head', {title: "Listado de Usuarios", style: "/css/styles-adminProduct.css"}) %>
+    
+    <body>
+
+        <!-- Inclución de Header -->
+        <%- include ('../partials/header') %>
+        
+        <main>
+            <section class="conteiner-adminProduct">
+                <div class="titulo-seccion">
+                <h3>Administrar Usuarios</h3>
+                <div class="crear">
+                    <a href="/users/create">Agregar un nuevo usuario</a>
+                </div>
+                </div>
+                <div class="products-list">
+                    <% for(let user of users) { %>
+                     <div class="listado-productos">   
+                        <div class="nombre-listado">
+                            <p><%= user.id%>.- <%= user.firstName%> <%= user.lastName%></p>
+                        </div>
+                        <div class="list-buttons">
+
+                            <div class="see">
+                                <a href="/users/userDetail/<%= user.id%>">Ver</a>
+                            </div>
+
+                            <div class="edit">
+                                <a href="/users/profile/edit/<%= user.id%>">Editar</a>
+                            </div>
+                            <form class="form-adminProduct" action="/users/<%= user.id%>?_method=DELETE" method="POST">
+                                <button type="submit" class="delete">Eliminar</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                        <% } %>
+                </div>
+                
+            </section>
+        </main>
+        
+        <!-- Inclución de Footer -->
+        <%- include ('../partials/footer') %>  
+
+    </body>
+
+</html>

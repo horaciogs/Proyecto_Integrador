@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../partials/head', {title: "Registro", style: "/css/styles-users.css"}) %>
+<body>
+    
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %>
+
+           
+    <main class="register">
+        <section class="conteiner-users">
+         <h3>Crear Usuario</h3>
+
+            <form class="form-login" action="/users/create" method="POST" enctype="multipart/form-data">
+                
+                <input type="text" id="firstName" name="firstName" placeholder="Nombre">
+                <input type="text" id="lastName" name="lastName" placeholder="Apellido">
+                <input type="text" id="email" name="email" placeholder="Correo electrónico">
+                <input type="password" id="password" name="password" placeholder="Contraseña">
+                <input type="password" id="confirmPsw" name="confirmPsw" placeholder="Confirmar contraseña">
+                <div class="recuerdame">
+                    <input type="checkbox" name="userPrivileges" id="userPrivileges" value="on">
+                    <label for="recuerdame">Permisos de administrador</label>
+                </div>
+                <input type="file" id="img" name="img">
+                <ul class="errores"></ul>
+               
+                <button type="submit" class="enviar">Crear</button>
+               
+                <button type="reset" class="borrar">Borrar</button>
+
+            </form>
+        </section>
+    </main>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>
+    <script src="/js/formulario.js"></script>
+
+</body>
+</html>

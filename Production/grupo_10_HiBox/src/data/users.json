@@ -1,0 +1,65 @@
+[
+ {
+  "id": 1,
+  "firstName": "Horacio",
+  "lastName": "Seren",
+  "email": "hgs.linux@gmail.com",
+  "password": "$2a$10$yFd3/TKdyrcZKcAFhYHdtu3auNusBAs5V8wSaEj7gbiylyYxFrxAO",
+  "birthDate": "2022-03-14",
+  "img": "/images/users/default-user.png"
+ },
+ {
+  "id": 2,
+  "firstName": "Horacio",
+  "lastName": "Seren",
+  "email": "hgs.linux@gmail.com",
+  "password": "$2a$10$yFd3/TKdyrcZKcAFhYHdtu3auNusBAs5V8wSaEj7gbiylyYxFrxAO",
+  "birthDate": "2022-03-14",
+  "img": "/images/users/default-user.png"
+ },
+ {
+  "id": 3,
+  "firstName": "Soy",
+  "lastName": "Prueba",
+  "email": "alopezt24@gmail.com",
+  "password": "$2a$10$qV8kwkAWFwKKNZVSNawuNeScdhA4sP/gFVJmaGmNxuhc0nWHKbUYa",
+  "birthDate": "2022-03-18",
+  "img": "/images/users/default-user.png"
+ },
+ {
+  "id": 4,
+  "firstName": "admin",
+  "lastName": "admin",
+  "email": "admin@adminuser.com",
+  "password": "$2a$10$suUPdyd7q5wOrVDA5rhXAehp74BmmKcuXRfys1Spwq6UA135tcNui",
+  "birthDate": "2022-03-23",
+  "img": "/images/users/default-user.png"
+ },
+ {
+  "id": 5,
+  "firstName": "prueba",
+  "lastName": "prueba",
+  "email": "prueba@hola.com",
+  "password": "$2a$10$siNnS64wT4oaLHdx21kIwuJNH/3cUSQMem0fUPvye5edME3290mfO",
+  "birthDate": "2022-03-24",
+  "img": "/images/users/default-user.png"
+ },
+ {
+  "id": 6,
+  "firstName": "h",
+  "lastName": "h",
+  "email": "hgs@gmail.com",
+  "password": "$2a$10$W2ZKkgDRC7PPamAAIpxxyODC9tco8RPNIzCpeRFQ9M7IgQbyHG4GG",
+  "birthDate": "2022-03-22",
+  "img": "/images/users/default-user.png"
+ },
+ {
+  "id": 7,
+  "firstName": "Nicolas",
+  "lastName": "Novikov",
+  "email": "lalalalala@lalala.alal",
+  "password": "$2a$10$a8SScNrqrSY0OGf.jAmRfOPIrei7YGlgw6.t/zWB4sRF079i8oKee",
+  "birthDate": "1984-05-06",
+  "img": "/images/users/default-user.jpg"
+ }
+]

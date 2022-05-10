@@ -1,0 +1,201 @@
+.conteiner-users {
+    background-color: white;
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 10%);
+}
+
+  
+
+.conteiner-users h3 {
+        text-align: center;
+        color: #222;
+        font-size: 2em;
+        margin: 15px auto;
+    }
+    .form-registro input,
+    .form-login input {
+        width: 100%;
+        padding: 8px;
+        margin: 20px 0;
+        border-radius: 30px;
+        color: #666;
+        border: solid 1px #666;
+    }
+        
+    .is-valid {
+        border: solid 1px #198754 !important;
+      }
+      
+    .is-invalid {
+        border: solid 1px #fa5f63 !important;
+      }
+    .alert-warning {
+        color: #fa5f63;
+        text-align: left;
+        background-color: #fcddde;
+        border-radius: 8px;
+        border: solid 1px #fa5f63;
+        padding: 10px;
+        line-height: 20px;
+    }
+
+    .borrar:hover {
+        background-color: #7d92a5;
+    }
+
+    .registro:hover {
+        background-color: #fa5f63;
+        color: white;
+        border: solid 1px #fa5f63;
+    }
+
+    .enviar:hover {
+        background-color: #9d8c84;
+    }
+    
+    .enviar {
+        background-color: #F95F62;
+        border-radius: 30px;
+        padding: 8px;
+        color: #FFF;
+        font-size: 20px;
+        margin: 20px 0;
+        width: 100%;
+        border: none !important;
+        transition: background-color 450ms;
+    }
+
+    .registro {
+        font-weight: 600;
+        border-radius: 30px;
+        padding: 8px;
+        color: #1c1b20;
+        font-size: 20px;
+        margin: 20px 0;
+        width: 100%;
+        border: solid 1px #1c1b20;
+        background-color: white;
+        transition: all 450ms;
+    }
+
+    .borrar {
+        background-color: #1c1b20;
+        border-radius: 30px;
+        padding: 8px;
+        color: #FFF;
+        font-size: 20px;
+        margin: 20px 0;
+        width: 100%;
+        border: none !important;
+        transition: background-color 450ms;
+    }
+
+    .recuerdame {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .recuerdame input{
+        width: 10%;
+        padding: 8px;
+        margin: 20px 0;
+        color: #666;
+    }
+
+    .form-login p a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #666;
+        transition: color 450ms;
+    }
+
+    .form-login img {
+        width: 40%;
+        align-self: center;
+        border-radius: 50%;
+        position: relative;
+        left: 129px;
+    }
+
+    .form-login p:hover a{
+        color: #fa5f63;
+    }
+
+    .invalid {
+        display: block;
+        color: #fa5f63;
+    }
+
+/*--------USER PROFILE-----------------------------*/
+
+    .editProfile i{
+        position: relative;
+        font-size: 23px;
+        background-color: #FFF;
+        border-radius: 50%;
+        padding: 10px;
+        margin: 10p;
+        top: 132px;
+        left: 50px;
+        color: #fa5f63;
+        border: solid 2px #fa5f63;
+        transition: all 450ms
+    }
+
+    .editProfile i:hover{
+        color: #666;
+        border: solid 2px #666;
+        transform: scale(90%) ;
+    }
+
+    .conteinerUserProfile {
+        display: block;
+        text-align: center;
+    }
+    .conteiner-accion{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .imageUserProfile img {
+        width: 30%;
+        align-self: center;
+        border-radius: 50%;
+        /* margin-top: 10px; */
+    }
+
+    .imageUserProfile h1 {
+        color: #666;
+        margin: 10px 0px;
+    }
+
+    .datosDeUsuarioProfile {
+        /*background-color: #96a4b1;*/
+        color: #222;
+        margin: auto;
+        width: 90%;
+        padding: 10px;
+        margin-top: 30px;
+    }
+    .datosDeUsuarioProfile p{
+        font-size: 17px;
+        text-align: left;
+        margin: 5px 0px 10px 5px;
+    }
+    .datosDeUsuarioProfile p:hover a{
+        color: #fa5f63;
+    }
+
+    .datosDeUsuarioProfile i {
+        color: #666;
+        font-size: 50px;
+        margin-bottom: 20px;
+    }

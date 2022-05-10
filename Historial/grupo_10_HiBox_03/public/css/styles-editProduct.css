@@ -1,0 +1,169 @@
+.conteiner-editProduct {
+    background-color: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 10%);
+}
+
+.conteiner-editProduct h3 {
+        text-align: center;
+        color: #222;
+        font-size: 2em;
+        margin: 15px auto;
+    }
+
+    
+.form-editProduct input {
+        width: 100%;
+        padding: 8px;
+        margin: 20px 0;
+        border-radius: 30px;
+        color: #666;
+        border: solid 1px #666;
+    }
+.priceDiscount{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.priceDiscount input,
+.productState input{
+    color: #666;
+    width: 34%;
+}
+.imagen-producto img{
+    width: 60%;
+}
+.productState {
+        padding: 8px;
+        margin: 20px 0;
+        border-radius: 30px;
+        color: #666;
+        border: solid 1px #666;
+}
+
+.items-select{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.uploadFlie{
+    margin: auto;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
+}
+
+.uploadFlie input{
+    margin: auto;
+    width: 100%;
+    border: none;
+}
+.productCategory,
+.productSubCategory {
+        width: 49%;
+        padding: 8px;
+        margin: 20px 0;
+        border-radius: 30px;
+        color: #666;
+        border: solid 1px #666;
+}
+.textArea {
+        border-radius: 5px;
+        padding: 8px;
+        color: #222;
+        font-size: 14px;
+        margin: 20px 0;
+        width: 100%;
+        height: 180px;
+        border: solid 1px #666;
+        overflow: hidden;
+        resize: both;
+}
+    .borrar:hover {
+        background-color: #7d92a5;
+    }
+    .enviar:hover {
+        background-color: #9d8c84;
+    }
+    
+    .enviar {
+        background-color: #F95F62;
+        border-radius: 30px;
+        padding: 8px;
+        color: #FFF;
+        font-size: 20px;
+        margin: 20px 0;
+        width: 100%;
+        border: none !important;
+        transition: background-color 450ms;
+    }
+
+
+    .borrar {
+        background-color: #1c1b20;
+        border-radius: 30px;
+        padding: 8px;
+        color: #FFF;
+        font-size: 20px;
+        margin: 20px 0;
+        width: 100%;
+        border: none !important;
+        transition: background-color 450ms;
+    }
+
+    .recuerdame {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .recuerdame input{
+        width: 10%;
+        padding: 8px;
+        margin: 20px 0;
+        color: #666;
+    }
+
+    .form-editProduct p a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #666;
+        transition: color 450ms;
+    }
+
+    .form-editProduct p:hover a{
+        color: #fa5f63;
+    }
+
+    .invalid {
+        display: block;
+        background-color: lightsalmon;
+        color: black;
+    }
+
+    .is-valid {
+        border: solid 1px #198754 !important;
+      }
+      
+    .is-invalid {
+        border: solid 1px #fa5f63 !important;
+      }
+    .alert-warning {
+        color: #fa5f63;
+        text-align: left;
+        background-color: #fcddde;
+        border-radius: 8px;
+        border: solid 1px #fa5f63;
+        padding: 10px;
+        line-height: 20px;
+    }

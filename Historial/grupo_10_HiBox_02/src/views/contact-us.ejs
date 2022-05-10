@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('./partials/head', {title: "Contact Us", style: "/css/styles-pages.css"}) %>
+<body>
+    
+    <!-- Inclución de Header -->
+    <%- include ('./partials/header') %>    
+           
+    <main class="register">
+        <section class="conteiner-page">
+            <h3>Contact Us</h3>
+            <form class="form-contact" action="/" method="POST" enctype="multipart/form-data">
+                
+                <input type="text" name="firstName" placeholder="Nombre">
+                <input type="text" name="lastName" placeholder="Apellido">
+                <input type="email" name="email" placeholder="Correo electrónico">
+                <textarea name="message" id="" cols="30" rows="10"></textarea>        
+
+                <button type="submit" class="enviar">Enviar</button>
+                
+            </form>
+        </section>
+    </main>
+
+    <!-- Inclución de Header -->
+    <%- include ('./partials/footer') %>   
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "nombre": "Horacio",
+    "correo": "hgs.linux@gmail.com",
+    "contraseña": "Horacio.123",
+    "fechaNacimiento": "",
+    "img": ""
+  },
+  {
+    "id": 2,
+    "nombre": "Nicolas",
+    "correo": "niconovikov@gmail.com",
+    "contraseña": "Nicolas.123",
+    "fechaNacimiento": "",
+    "img": ""
+  },
+  {
+    "id": 3,
+    "nombre": "Isabel",
+    "correo": "isabel.beatriz.g.z@gmail.com",
+    "contraseña": "Isabel.123",
+    "fechaNacimiento": "",
+    "img": ""
+  },
+  {
+    "id": 4,
+    "nombre": "Andres",
+    "correo": "alopezt24@gmail.com",
+    "contraseña": "Andres.123",
+    "fechaNacimiento": "",
+    "img": ""
+  },
+  {
+    "id": 6,
+    "firstName": "fff",
+    "lastName": "ser",
+    "email": "ssss@gmail.com",
+    "psw": "123",
+    "birthDate": "2022-03-11",
+    "img": "/images/users/img-1646867822237.png"
+  }
+]

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../partials/head', {title: "Detalle Producto", style: "/css/styles-productDetail.css"}) %>
+<body>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %>    
+
+    <main>
+        <!-- Inicio contenedor detalle de producto -->
+        <section class="conteiner-titulo">
+            <h3>Inicio > Productos > <%= miProducto.name%></h3>
+        </section>
+        <section class="main-product-detail-seccion">
+            <div class="detalle-producto">
+               <img src="<%= miProducto.productImage%>", alt="Cena para romantica">     
+            </div>
+            <div class="detalle-compra">
+                <div>
+                <h3><%= miProducto.name%></h3>
+                </div>
+                <div class="categoriaSubcategoria">
+                    <div class="categoria">
+                        <p>Categoría:</p>
+                        <h2><%= miProducto.categorys.category%></h2>
+                    </div>
+                    <div class="subCategoria">
+                        <p>Sub Categoría:</p>
+                        <h2><%= miProducto.subCategorys.subCategory%></h2>
+                    </div>
+                    <div class="cantidad-input">
+                        <p>Cantidad:</p>
+                        <input type="number" name="cantidad" placeholder="1" required>
+                    </div>
+                </div>
+                <div class="precioDescuento">
+                    <div class="descuento">
+                        <p>Precio Anterior:</p>
+                        <h2>$<%= miProducto.priceBefore%></h2>
+                    </div>
+                    <div class="precio">
+                        <p>Precio:</p>
+                        <h2>$<%= miProducto.price%></h2>
+                    </div>
+                    </div>
+                <div class="detalle-producto">
+                <p><%= miProducto.detail%></p>
+                </div>
+                <div class="comprar">
+                    <p ><a href="#"><i class="fas fa-shopping-cart"></i> Comprar</a></p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Inicio sección de productos destacados -->
+        <section class="contenedor-novedades-productos">
+            <h3>DESTACADOS</h3>
+            <div class="products">
+                <% for(let producto of products) { %>
+                    <% if (producto.states.state == "Destacado" && producto.id < 15) { %>
+                <article>
+                    <div class="novedad-producto">
+                        <p><%= producto.states.state%></p>
+                    </div>
+                    <img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
+                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+                    <div class="nombre-producto">
+                        <p><%= producto.name%></p>
+                    </div>
+                    <div class="contenedor-detalle">
+                    <p class="precios">$<%= producto.price%></p>
+                    <p class="discount">$<%= producto.priceBefore%></p>
+                    </div>
+                    <div class="acceso-detalle">
+                        <a href="/products/productDetail/<%= producto.id%>"> <p>Ver detalle</p> </a>
+                    </div>
+                </article>
+                  <% } %>
+                <% } %>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>  
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('../partials/head', {title: "Admin", style: "/css/styles-adminProduct.css"}) %>
+    
+    <body>
+
+        <!-- Inclución de Header -->
+        <%- include ('../partials/header') %>
+        
+        <main>
+            <section class="conteiner-adminProduct">
+                <div class="titulo-seccion">
+                <h3>Administrar Productos</h3>
+                <div class="crear">
+                    <a href="/admin/productCreate">Agregar un nuevo producto</a>
+                </div>
+                <!--<form class="form-adminProduct" action="../admin/createProduct" method="POST">
+                    <button type="submit" class="crear">Crear un nuevo producto</button>
+                </form>-->
+                </div>
+                <div class="products-list">
+                    <% for(let producto of products) { %>
+                     <div class="listado-productos">   
+                        <div class="nombre-listado">
+                            <p><%= producto.id%>.- <%= producto.nombre%></p>
+                        </div>
+                        <div class="list-buttons">
+
+                            <div class="see">
+                                <a href="/admin/productDetail/<%= producto.id%>">Ver</a>
+                            </div>
+
+                            <div class="edit">
+                                <a href="/admin/productEdit/<%= producto.id%>">Editar</a>
+                            </div>
+                            <form class="form-adminProduct" action="/admin/<%= producto.id%>?_method=DELETE" method="POST">
+                                <button type="submit" class="delete">Eliminar</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                        <% } %>
+                </div>
+                
+            </section>
+        </main>
+        
+        <!-- Inclución de Footer -->
+        <%- include ('../partials/footer') %>  
+
+    </body>
+
+</html>

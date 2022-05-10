@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../partials/head', {title: "Registro", style: "/css/styles-users.css"}) %>
+<body>
+    
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %>    
+           
+    <main class="register">
+        <section class="conteiner-users">
+            <h3>Registrate</h3>
+            <form class="form-login" action="/users/register" method="POST" enctype="multipart/form-data">
+                
+               
+                <input type="text" name="firstName" placeholder="Nombre" value="<%= locals.oldData ? oldData.firstName : null %>">
+                <% if (locals.errors && errors.firstName) { %>
+                   <div class="invalid">
+                       <p><%= errors.firstName.msg %> </p>
+                   </div>
+                <% } %>
+                <input type="text" name="lastName" placeholder="Apellido" value="<%= locals.oldData ? oldData.lastName : null %>">
+                <% if (locals.errors && errors.lastName) { %>
+                    <div class="invalid">
+                        <p><%= errors.lastName.msg %> </p>
+                    </div>
+                 <% } %>
+                <input type="text" name="email" placeholder="Correo electrónico" value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="invalid">
+                        <p><%= errors.email.msg %> </p>
+                    </div>
+                 <% } %>
+                <input type="password" name="password" placeholder="Contraseña">
+                <% if (locals.errors && errors.password) { %>
+                    <div class="invalid">
+                        <p><%= errors.password.msg %> </p>
+                    </div>
+                 <% } %>
+                <input type="password" name="confirmPsw" placeholder="Confirmar contraseña">
+                <% if (locals.errors && errors.confirmPsw) { %>
+                    <div class="invalid">
+                        <p><%= errors.confirmPsw.msg %> </p>
+                    </div>
+                 <% } %>
+                <input type="date" name="birthDate" id="birthDate" value="<%= locals.oldData ? oldData.birthDate : null %>">
+                <% if (locals.errors && errors.birthDate) { %>
+                    <div class="invalid">
+                        <p><%= errors.birthDate.msg %> </p>
+                    </div>
+                 <% } %>
+                <input type="file" name="img">
+                <% if (locals.errors && errors.img) { %>
+                    <div class="invalid">
+                        <p><%= errors.img.msg %> </p>
+                    </div>
+                 <% } %>
+
+
+                <button type="submit" class="enviar">Registrarme</button>
+                
+                <div class="recuerdame">
+                <input type="checkbox" checked="checked" name="terminosYCondiciones" id="terminos-y-condiciones" value="terminos-y-condiciones">
+                <label for="terminos-y-condiciones">Al crear una cuenta, acepta nuestros <a href="#">Terminos & Condiciones</a></label>
+                </div>
+                
+                <button type="reset" class="borrar">Borrar</button>
+
+                <p><a href="./login">Ya tengo una cuenta en HiBox</a></p>
+            </form>
+        </section>
+    </main>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>   
+
+</body>
+</html>

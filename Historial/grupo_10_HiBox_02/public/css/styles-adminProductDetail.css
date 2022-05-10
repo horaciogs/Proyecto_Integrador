@@ -1,0 +1,143 @@
+.conteiner-detailProduct {
+    background-color: white;
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 10%);
+    display: flex;
+
+}
+.crear {
+    background-color: #7d92a5;
+    text-align: center;
+    border-radius: 30px;
+    padding: 10px;
+    width: 220px;
+    border: none !important;
+    transition: all 450ms;
+}
+
+.crear a {
+    color: #FFF;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+.crear:hover {
+    background-color: #1c1b20;
+}
+
+.botonera{
+    background-color: white;
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 10%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.see:hover,
+.edit:hover {
+        background-color: #1c1b20;
+    }
+ 
+    .delete:hover {
+        background-color: #1c1b20;
+        border: solid 1px #1c1b20;
+    }
+
+    .see,
+    .edit {
+        text-align: center;
+        background-color: white;
+        border-radius: 30px;
+        padding: 8px;
+        color: #1c1b20;
+        border: solid 1px #1c1b20;
+        font-size: 15;
+        margin-left: 5px;
+        width: 80px;
+        transition: all 450ms;
+    }
+
+    .see a,
+    .edit a {
+        text-decoration: none !important;
+        color: #1c1b20;
+        font-size: 15;
+        transition: all 450ms;
+    }
+    .see:hover a,
+    .edit:hover a {
+        color: #FFF;
+    }
+    .delete {
+        background-color: #F95F62;
+        border: solid 1px #F95F62;
+        border-radius: 30px;
+        padding: 8px;
+        color: #FFF;
+        margin-left: 5px;
+        width: 80px;
+        transition: background-color 450ms;
+    }
+.productImage img{
+    width: 280px;
+}
+
+.categoriaSubcategoria h2,
+.nombreDetalle h2 {
+        text-align: left;
+        color: #222;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+}
+        
+.categoriaSubcategoria p,
+.nombreDetalle p {
+        text-align: left;
+        color: #7d92a5;
+        font-size: 14px;
+        margin-top: 20px;
+        
+    }
+        
+
+.categoriaSubcategoria {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.left-column {
+    width: 50%;
+}
+.subCategoria {
+    margin-left: 50px;
+}
+
+.nombreDetalle h1 {
+    color: #222;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: justify;
+    line-height: 16px;
+}
+
+.novedad-producto-detalle {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F95F62;
+    color: white;
+    text-align: center;
+    padding: 10px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+}

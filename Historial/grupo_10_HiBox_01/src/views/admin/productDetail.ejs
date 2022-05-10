@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../partials/head', {title: "Detalle Producto", style: "/css/styles-adminProductDetail.css"}) %>
+<body>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %>    
+
+    <main>
+        <section class="conteiner-detailProduct">
+            <div class="left-column">
+            
+            <div class="novedad-producto-detalle">
+                <p><%= miProducto.estado.toUpperCase()%></p>
+            </div>
+            <div class="productImage">
+                <img src="<%= miProducto.img%>">
+            </div>
+            </div>
+            <div class="contenidoProducto">
+                <div class="nombreDetalle">
+                    <p>Nombre Producto:</p>
+                    <h2><%= miProducto.nombre%></h2>
+                </div>
+                <hr>
+                <div class="categoriaSubcategoria">
+                <div class="categoria">
+                    <p>Categoría:</p>
+                    <h2><%= miProducto.categoria%></h2>
+                </div>
+                <div class="subCategoria">
+                    <p>Sub Categoría:</p>
+                    <h2><%= miProducto.subCategoria%></h2>
+                </div>
+                </div>
+                <hr>
+                <div class="categoriaSubcategoria">
+                    <div class="categoria">
+                        <p>Precio:</p>
+                        <h2>$<%= miProducto.precio%></h2>
+                    </div>
+                    <div class="subCategoria">
+                        <p>Precio Anterior:</p>
+                        <h2>$<%= miProducto.precioAnterior%></h2>
+                    </div>
+                    </div>
+                    <hr>
+                <div class="nombreDetalle">
+                    <p>Descripción:</p>
+                    <h1><%= miProducto.detalle%></h1>
+                </div>
+            </div>
+        </section>
+        <section class="botonera">
+            <div class="see">
+                <a href="/admin/adminProduct">Volver</a>
+            </div>
+            <div class="crear">
+                <a href="/admin/productCreate">Agregar un nuevo producto</a>
+            </div>
+            <!--<div class="edit">
+                <a href="/admin/productEdit">Editar</a>
+            </div>
+            <form class="form-adminProduct" action="/admin/:id?_method=DELETE" method="POST">
+                <button type="submit" class="delete">Eliminar</button>
+            </form>-->
+        </section>
+    </main>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>  
+
+</body>
+</html>

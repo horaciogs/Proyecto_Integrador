@@ -1,0 +1,684 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #666;
+    font-size: 12px;
+    background-color: #ebebeb;
+    }
+
+.section-oferta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 5px 10px;
+    background-color: #F95F62;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+
+}
+.error {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.error h1{
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+.error p{
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.main-header {
+ position: relative;
+}
+
+.loginMobile a{
+    position: relative;
+    color: #666;
+    display: block;
+    padding: 15px 0;
+    border-radius: 8px;
+    text-align: center; 
+    font-size: 20px;
+    margin: auto;
+    z-index: 3;
+}
+
+.loginMobile,
+.cart-icon,
+.hamburguer-button,
+.close-button {
+    color: #666;
+    display: block;
+    padding: 15px 0;
+    border-radius: 8px;
+    text-align: center; 
+    font-size: 20px;
+    margin: auto;
+}
+
+.nav-header-mobile-sub{
+      display: block;
+} 
+
+.close-button {
+    display: none;
+}
+
+.nav-bar-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    background-color: white;
+    box-shadow: 0px 8px 12px -8px rgba(0,0,0,0.75);
+}
+
+.nav-bar-header-left,
+.nav-bar-header-right {
+    display: none;
+    
+}
+.nav-bar-header-left ul{
+    display: flex;
+    align-items: flex-start;
+}
+
+.nav-bar-header-right ul{
+    justify-content: space-between;
+    align-items: flex-end;
+    list-style: none;
+    margin: 0 ;
+    padding: 0;
+}
+
+.imgViewMobil img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.nav-bar-header-left li,
+.nav-bar-header-right li{
+    margin-left: 15px;
+    display: inline-block;
+}
+
+
+.nav-bar-header-left a,
+.nav-bar-header-right a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #666;
+}
+
+.nav-bar-header-center {
+    position: relative;
+    margin:auto;
+}
+
+.slider {
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider img {
+    width: 100%;
+    margin: auto;
+      
+}
+
+.slider h3 {
+    text-align: center;
+    color: white;
+    position: absolute;
+    font-size: 2em;
+}
+
+.slider .boton-negro a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: black;
+    width: 140px;
+    padding: 10px;
+    position: absolute;
+    top: 68%;
+    left: 50vw;
+    margin-left: -69px;
+    border-radius: 30px;
+    transition: all 450ms;
+}
+
+.slider .boton-negro:hover a {
+    background-color: #F95F62;
+       
+}
+
+.slider-composition {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column  ;
+}
+.contenedor-destacados{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+.destacado-aventura,
+.destacado-gastronomia,
+.destacado-entretenimiento {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-color: black;
+}
+.destacado-aventura img,
+.destacado-gastronomia img,
+.destacado-entretenimiento img {
+    width: 100%;
+    margin: auto;
+    margin: 0px;
+}
+
+.destacado-aventura h3,
+.destacado-gastronomia h3,
+.destacado-entretenimiento h3 {
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 30%;
+    font-size: 2em;
+}
+
+.destacado-aventura p a,
+.destacado-gastronomia p a,
+.destacado-entretenimiento p a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    width: 140px;
+    padding: 10px;
+    position: absolute;
+    top: 60%;
+    left: 31%;
+    border: solid 2px white;
+    border-radius: 30px;
+    font-size: 1em;
+    transition: all 450ms;
+}
+
+
+.destacado-aventura p:hover a,
+.destacado-gastronomia p:hover a,
+.destacado-entretenimiento p:hover a{
+    background-color: white;
+    color: #222;
+    }
+
+.contenedor-novedades-productos {
+        margin: auto;
+       
+    }
+
+.contenedor-novedades-productos h3 {
+    text-align: center;
+    color: #222;
+    font-size: 2em;
+    margin: 50px auto;
+    }
+
+    .contenedor-detalle {
+        margin: 10px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
+    main section div .products{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    main section article{
+    position: relative;
+    background-color: white;
+    text-align: center;
+    padding: 10px 0px;
+    margin-left: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 30%);
+    }
+    
+    main section article img{
+        width: 100%;
+    }
+    
+    main section h3{
+        margin: 20px 0px;
+    }
+    
+    article div.main-article{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        border-top: 1px solid #ebebeb;
+        position: relative;
+        padding: 15px;
+    }
+
+main section div.products article{
+        width: 90%;
+    }
+
+    .novedad-producto {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #F95F62;
+        color: white;
+        text-align: center;
+        padding: 10px 28px;
+        border-radius: 30px;
+        left: 4%;
+        top: 4%;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .icono-plus-prtoducto {
+        position: absolute;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: gray;
+        color: white;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        left: 46%;
+        top: 60%;
+        transition: all 450ms;
+    }
+
+    .icono-plus-prtoducto:hover {
+        background-color: #F95F62;
+        transform: rotate(180deg) ;
+    }
+    .nombre-producto {
+        margin-top: 10px;
+        padding-top: 20px;
+        border-top: solid 1px gray;
+        color: #9c8c84;
+        font-size: 16px;
+    }
+    
+    .precios{
+        font-size: 30px;
+        flex-grow: 5;
+        text-align: right;
+        color: #F95F62;
+    }
+    .discount{
+        font-weight: 100;
+        margin-left: 10px;
+        font-size: 22px;
+        flex-grow: 5;
+        text-align: left;
+        text-decoration: line-through;
+        color: #b6b1af;
+    }
+    
+    .acceso-detalle a{
+        text-decoration: underline;
+        color: #7d92a5;
+        font-size: 1em;
+    }
+    .acceso-detalle:hover a{
+        color: #F95F62;
+    }
+    .contenedor-intrucciones-compra {
+        background-color: #1c1b1f;
+        color: white;
+        margin: 30px 0;
+    }
+    .elementos-instrucciones {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 968px;
+        text-align: center;
+    }
+    .elementos-instrucciones .item {
+        position: relative;
+        padding: 10px;
+        width: 80%;
+        
+    }
+
+    .elementos-instrucciones .imagen-item {
+        position: relative;
+       text-align: center;
+       margin: auto;
+       width: 90%;
+    }
+    .elementos-instrucciones .texto-item {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+        text-align: center;
+     }
+
+    footer {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        padding: 50px;
+        background-color: #1c1b1f;
+    }
+    footer .logo-footer{
+        margin-top: 10px;
+        
+    }
+    footer p{
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 14px;
+        
+    }
+    
+    footer a{
+        color: white !important;
+        text-decoration: none !important;
+        
+    }
+    
+    footer li{
+        font-size: 13px;
+        font-weight: 200;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+        
+    }
+    footer li i{
+        margin-right: 10px;
+        
+    }
+    
+    footer .suscripcion input{
+        margin: 10px;
+        font-size: 12px !important;
+        border-radius: 20px;
+        padding: 10px;
+        min-width: 210px;
+        font-size: 20px;
+        border: none !important;
+        border: solid 2px white;
+            
+    }
+    
+    footer .footer-redes ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    
+    footer .footer-redes li{
+        font-size: 20px;
+            
+    }
+    
+    .copy p{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        color: white;
+        background-color: #1c1b1f;
+        font-weight: 100;
+        font-size: 12px;
+        text-decoration: none;
+    }
+    .nav-bar-header-center .logo {
+        /* width: 100px; */
+        position: relative;
+        left: 18vw;
+        margin: auto;
+    }
+    .nav-bar-header-center .logo img {
+         width: 77%; 
+    } 
+
+/* Menu Desplegado Mobile */
+
+.nav-header-mobile-sub {
+    display: none;
+    background-color: white;
+}
+
+.nav-header-mobile-sub li a{
+    text-decoration: none;
+    display: block;
+    color: #222;
+    font-size: 16px;
+    padding: 26px;
+    transition: all 450ms;
+}
+
+.nav-header-mobile-sub li:hover a{
+    background-color: #F95F62;
+    font-weight: 600;
+    color: white;
+}
+
+
+@media (min-width: 361px){
+    .destacado-aventura p a,
+    .destacado-gastronomia p a,
+    .destacado-entretenimiento p a {
+    left: 40vw;
+    margin-left: -10%;
+} 
+    .slider h3 {
+        font-size: 2.5em;
+    }
+    .slider .boton-negro a {
+        transform: scale(110%);
+    }
+    .elementos-instrucciones .imagen-item {
+       max-width: 146px;
+     }
+
+    .elementos-instrucciones {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    } 
+    .elementos-instrucciones .imagen-item {
+        margin: auto;
+        width: 90%;
+     }
+    main section div.products{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+    main section div.products article{
+        width: 45%;
+    }
+}
+
+@media (min-width: 768px){
+    .nav-header-mobile-sub {
+       display: none;
+    }
+    .nav-bar-header-center .logo img {
+        width: 100%; 
+   }
+    .cart-icon,
+    .hamburguer-button,
+    .close-button,
+    .imgViewMobil img,
+    .loginMobile
+     {
+        display: none;
+    }
+    .destacado-aventura h3, 
+    .destacado-gastronomia h3, 
+    .destacado-entretenimiento h3 {
+       font-size: 2em;
+    }
+    
+    .imgView img {
+        width: 25px;
+        /* height: 25px; */
+        margin-top: 30p;
+        border-radius: 50%;
+        position: relative;
+        top: 6px;
+        right: 4px;
+    }
+
+    .imgView a {
+        font-size: 15px;
+    }
+
+    .slider h3 {
+        font-size: 4em;
+    }
+
+    .slider .boton-negro a {
+        left: 50vw;
+        margin-left: -60px;
+        transform: scale(120%);
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 100px;
+        padding: 20px;
+        background-color: #1c1b1f;
+    }
+
+    
+
+footer a{
+    color: white !important;
+    text-decoration: none !important;
+    
+}
+footer p,
+footer li,
+footer .footer-redes ul,
+footer .suscripcion input
+{
+    justify-content: left;
+}
+    .section-oferta {
+        font-size: 1em;
+    
+    }
+    .nav-bar-header-left {
+        display: flex;
+        font-size: 1em;
+        color: #666;
+    }
+
+    .nav-bar-header-center .logo {
+    position: relative;
+    left: -5vw;
+    margin: auto;
+}
+    
+    .nav-bar-header-right {
+        display: flex;
+        font-size: 1em;
+        color: #666;
+        
+    }
+    .nav-bar-header-left li,
+    .nav-bar-header-right li{
+    margin-left: 12px;
+    display: inline-block;
+}
+
+.nav-bar-header-left a,
+.nav-bar-header-right a {
+    text-decoration: none;
+    color: #666;
+}
+
+.nav-bar-header-left a:hover,
+.nav-bar-header-right a:hover {
+    color: #F95F62;
+}
+
+    .contenedor-destacados{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .destacado-aventura p a,
+    .destacado-gastronomia p a,
+    .destacado-entretenimiento p a {
+    left: 10vw;
+    margin-left: -3%;
+} 
+    main section div.products{
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    margin-left: 5%;
+    }
+    main section div.products article{
+      width: 22%;
+    }
+
+}

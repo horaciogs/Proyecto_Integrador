@@ -1,0 +1,87 @@
+<header class="main-header">
+    <section class="section-oferta">
+        <p>ENVÍOS SIN CARGO A PARTIR DE $9000 + HASTA 6 CUOTAS SIN INTERÉS</p>
+    </section>
+    
+    <div class="nav-bar-header">
+        <div class="nav-header-mobile-left">
+            <a href="#" class="hamburguer-button">
+                <i class="fas fa-bars"></i>
+            </a>
+            <a href="#" class="close-button">
+                <i class="fas fa-times"></i>
+            </a>
+        </div> 
+        
+      <div class="nav-bar-header-left">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/faqs">FAQs</a></li>
+                <li><a href="/contact-us">Contact us</a></li>
+            </ul>
+        </div>
+
+    <div class="nav-bar-header-center">
+        <div class="logo">
+            <a href="/"><img src="/images/logo-nav.png", alt="Logo HiBox"></a>
+        </div>  
+    </div>
+    
+    <div class="nav-bar-header-right">
+        <ul>
+            <% if (locals.isLogged) { %>
+                <li class="imgView"><img src="<%= locals.userLogged.img %>"> 
+                    <% if(locals.userLogged.email === "admin@adminuser.com") { %>
+                        <a href="/users/profile"><%= locals.userLogged.firstName %></a>
+                    <% } else { %>
+                        <a href="/users/profile/edit/<%= locals.userLogged.id %>"><%= locals.userLogged.firstName %></a>
+                    <% } %>
+                </li>
+               
+                <li><a href="/users/logout">Logout</a></li>
+            <% } %>
+            <% if (!(locals.isLogged)) { %>
+                <li><a href="/users/register">Registrate</a></li>
+                <li><a href="/users/login">Login</a></li>
+            <% } %>
+            <li><a <% if (locals.isLogged) { %> 
+                        href="/products/productCart" 
+                        <% } else { %>
+                            href="/users/login"
+                        <% } %>><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </div>
+    <% if (locals.isLogged) { %>
+        <div class="imgViewMobil">
+              <a href="/users/profile"> <img src="<%= locals.userLogged.img %>"> </a>
+        </div>
+    <% } else { %>
+        <div class="loginMobile">
+            <a href="/users/login"> <i class="fas fa-sign-in-alt"></i></a>
+        </div>
+    <% } %>
+    
+    <div class="nav-header-mobile-right">
+        <a class="cart-icon" <% if (locals.isLogged) { %> 
+            href="/products/productCart" 
+            <% } else { %>
+                href="/users/login"
+            <% } %>><i class="fas fa-shopping-cart"></i></a>
+        <!--<a href="/products/productCart" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+        </a>-->
+    </div>
+    </div>
+    <div class="nav-header-mobile-sub">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/faqs">FAQs</a></li>
+            <li><a href="/contact-us">Contact us</a></li>
+        </ul>
+    </div>
+    <script src="/js/header.js"></script>
+</header>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+	<%- include ('../partials/head', {title: "Crear Producto", style: "/css/styles-editProduct.css"}) %>
+<body>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %> 
+      <main>
+		<section class="conteiner-editProduct">
+			<h3>Editar Producto</h3>
+				<form class="form-editProduct" action="../productEdit/<%= productoEditar.id%>?_method=PUT" method="post" enctype="multipart/form-data" >
+				<input type="text" name="nombre" placeholder="HiBox Aventura - Combo 1" required value="<%= productoEditar.nombre%>">
+				<div class="items-select">
+					<select name="categoria" id="categoria" class="productCategory">
+						<option disabled value="<%= productoEditar.categoria%>">Categoría del Producto</option>
+						<option value="aventura">Aventura</option>
+						<option value="entretenimiento">Entretenimiento</option>
+						<option value="gastronomia">Gastronomía</option>
+						<!--<option value="aventura" <%= productoEditar.categoria == "aventura" ? "selected" : null %>Aventura</option>
+						<option value="entretenimiento" <%= productoEditar.categoria == "entretenimiento" ? "selected" : null %>Entretenimiento</option>
+						<option value="gastronomia" <%= productoEditar.categoria == "gastronomia" ? "selected" : null %>Gastronomía</option>-->
+					</select>
+					<select name="subCategoria" id="subCategoria" class="productSubCategory">
+						<option disabled value="<%= productoEditar.subCategoria%>">Subcategorias</option>
+						<option value="individual">Individual</option>
+						<option value="acompaniado">Acompañado</option>
+						<option value="familiar">Familiar</option>
+						<!--<option value="individual" <%= productoEditar.subCategoria == "individual" ? "selected" : null %>Individual</option>
+						<option value="acompaniado" <%= productoEditar.subCategoria == "acompaniado" ? "selected" : null %>Acompañado</option>
+						<option value="familiar" <%= productoEditar.subCategoria == "familiar" ? "selected" : null %>Familiar</option>-->
+					</select>
+				</div>
+				<div class="priceDiscount">
+					<input type="number" name="precio" placeholder="$6.770" required value="<%= productoEditar.precio%>">
+					<input type="number" name="precioAnterior" placeholder="$9.850" required value="<%= productoEditar.precioAnterior%>">
+
+					<select name="estado" id="estado" class="productState">
+						<option disabled value="<%= productoEditar.estado%>">Estado de producto</option>
+						<option value="nuevo">Nuevo</option>
+						<option value="oferta">Oferta</option>
+						<option value="destacado">Destacado</option>
+						<!--<option value="nuevo" <%= productoEditar.estado == "nuevo" ? "selected" : null %>Nuevo</option>
+						<option value="oferta" <%= productoEditar.estado == "oferta" ? "selected" : null %>Oferta</option>
+						<option value="destacado" <%= productoEditar.estado == "destacado" ? "selected" : null %>Destacado</option>-->
+					</select>
+				</div>
+			    <div class="uploadFlie">
+				<div class="imagen-producto"><img src="<%= productoEditar.img%>" alt="Imagen Producto"></div>
+				<!--<label for="img" class="form-label">Imagen de producto:</label>-->
+				<input type="file" name="img" value="fotoProd" class="botonFile">
+			   </div>
+			  <textarea name="detalle" id="detalle" value="<%= productoEditar.detalle%>" class="textArea"><%= productoEditar.detalle%></textarea>
+			   <button type="submit" class="enviar">Enviar</button>
+			   <button type="reset" class="borrar">Refrescar</button>
+			</form>
+	  </section>
+	  </main>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>  
+
+</body>
+</html>

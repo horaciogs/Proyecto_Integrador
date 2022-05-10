@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include ('../partials/head', {title: "Carrito de Compras", style: "/css/styles-shop.css"}) %>
+
+	<body>
+        <!-- Inclución de Header -->
+        <%- include ('../partials/header') %>
+
+        <main>
+			<section class="conteiner-shop">
+				<h3>Carrito de Compras</h3>
+				<div>
+					<article class="conteiner-productos-shop">
+						<div class="product-img-shop">
+						<img src="/images/img-producto-aventura.jpg", alt="Imagen Aventura">
+					    </div>
+						<div class="icono-trash-producto"><i class="far fa-trash-alt"></i>
+						</div>
+						<div class="contenedor-detalle-shop">
+							<div class="nombre-producto-shop">
+								<p>HiBox Aventura - Combo 1</p>
+							</div>
+							<div class="conteiner-valores">
+								<form action="/productCart" method="post">
+								<label for="cantidad">Cantidad</label>
+								<input type="number" id="cantidad" value="1" name="cantidad" min="1" max="100"> 
+							</form>
+								<p class="precio-shop">$6.770</p>
+							    <p class="discount-shop">$9.850</p>
+							</div>
+							<div class="acceso-detalle-shop">
+								<p>Ver detalle</p> 
+							</div>
+						   
+						</div>
+						
+					</article>
+					<article class="conteiner-productos-shop">
+						<div class="product-img-shop">
+						<img src="/images/img-producto-aventura.jpg", alt="Imagen Aventura">
+					    </div>
+						<div class="icono-trash-producto"><i class="far fa-trash-alt"></i>
+						</div>
+						<div class="contenedor-detalle-shop">
+							<div class="nombre-producto-shop">
+								<p>HiBox Aventura - Combo 1</p>
+							</div>
+							<div class="conteiner-valores">
+								<form action="/productCart" method="post">
+								<label for="cantidad">Cantidad</label>
+								<input type="number" id="cantidad" value="1" name="cantidad" min="1" max="100"> 
+							</form>
+								<p class="precio-shop">$6.770</p>
+							    <p class="discount-shop">$9.850</p>
+							</div>
+							<div class="acceso-detalle-shop">
+								<p>Ver detalle</p> 
+							</div>
+						   
+						</div>
+						
+					</article>
+					<div class="conteiner-totals-shop">
+						<div class="label-total">
+							<p>Total</p>
+						</div>
+						<div class="total">
+							<p>$24.000</p>
+						</div>
+						<div class="comprar">
+							<p ><a href="#">Comprar</a></p>
+						</div>
+		
+					</div>
+				</div>
+				
+			</section>
+			
+			<!-- Inicio sección de productos destacados -->
+			<section class="contenedor-novedades-productos">
+				<h3>DESTACADOS</h3>
+				<div class="products">
+					<% for(let producto of products) { %>
+						<% if (producto.estado == "destacado" && producto.id < 15) { %>
+					<article>
+						<div class="novedad-producto">
+							<p><%= producto.estado.toUpperCase()%></p>
+						</div>
+						<img src="<%= producto.img%>", alt="Imagen Aventura" class="product_img">
+						<div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+						<div class="nombre-producto">
+							<p><%= producto.nombre%></p>
+						</div>
+						<div class="contenedor-detalle">
+						<p class="precios">$<%= producto.precio%></p>
+						<p class="discount">$<%= producto.precioAnterior%></p>
+						</div>
+						<div class="acceso-detalle">
+							<a href="/products/productDetail/<%= producto.id%>"> <p>Ver detalle</p> </a>
+						</div>
+					</article>
+					  <% } %>
+					<% } %>
+	
+				</div>
+			</section>
+
+</main>
+
+<!-- Inclución de Footer -->
+<%- include ('../partials/footer') %>  
+
+</body>
+</html>

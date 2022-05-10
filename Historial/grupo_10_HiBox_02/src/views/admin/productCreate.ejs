@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+	<%- include ('../partials/head', {title: "Crear Producto", style: "/css/styles-newProduct.css"}) %>
+<body>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %> 
+      <main>
+		<section class="conteiner-newProduct">
+			<h3>Crear Productos</h3>
+			<form class="form-newProduct" action="../admin/productCreate" method="post" enctype="multipart/form-data">
+				<input type="text" name="nombre" placeholder="Nombre de Producto" value="<%= locals.oldData ? oldData.nombre : null %>">
+				<% if (locals.errors && errors.nombre) { %>
+					<p class="invalid"><%= errors.nombre.msg %> </p>
+				<% } %>
+				<div class="items-select">
+				<select name="categoria" id="categoria" class="productCategory" >
+					<option disabled value="Categoría del Producto" selected>Categoría del Producto</option>
+					
+					<% let opcionesCat = ['Aventura','Entretenimiento','Gastronomia'] %>
+						
+					<% for (const unaOpcion of opcionesCat) { %>
+						<option value="<%= unaOpcion %>" <%= locals.oldData && (unaOpcion === oldData.categoria)? 'selected' : null %>><%= unaOpcion %></option>
+					<% } %>
+
+				</select>
+				<% if (locals.errors && errors.categoria) { %>
+					<p class="invalid"><%= errors.categoria.msg %> </p>
+				<% } %>
+				<select name="subCategoria" id="subCategoria" class="productSubCategory">
+					<option disabled value="Subcategorias" selected>Subcategorias</option>
+					
+					<% let opcionesSubCat = ['Individual','Acompañado','Familiar'] %>
+						
+					<% for (const unaOpcion of opcionesSubCat) { %>
+						<option value="<%= unaOpcion %>" <%= locals.oldData && (unaOpcion === oldData.subCategoria)? 'selected' : null %>><%= unaOpcion %></option>
+					<% } %>
+
+				</select>
+				<% if (locals.errors && errors.subCategoria) { %>
+					<p class="invalid"><%= errors.subCategoria.msg %> </p>
+				<% } %>
+			    </div>
+				<div class="priceDiscount">
+					<input type="number" step="any" name="precio" placeholder="Precio de Producto" value="<%= locals.oldData ? oldData.precio : null %>">
+					<% if (locals.errors && errors.precio) { %>
+						<p class="invalid"><%= errors.precio.msg %> </p>
+					<% } %>
+					<input type="number" step="any" name="precioAnterior" placeholder="Descuento" value="<%= locals.oldData ? oldData.precioAnterior : null %>">
+					<% if (locals.errors && errors.precioAnterior) { %>
+						<p class="invalid"><%= errors.precioAnterior.msg %> </p>
+					<% } %>
+					<div>
+						<select name="estado" id="estado" class="productState">
+							<option disabled value="Estado de producto" selected>Estado de producto</option>
+							
+							<% let opcionesEstado = ['Nuevo','Oferta','Destacado'] %>
+							
+							<% for (const unaOpcion of opcionesEstado) { %>
+							<option value="<%= unaOpcion %>" <%= locals.oldData && (unaOpcion === oldData.estado)? 'selected' : null %>><%= unaOpcion %></option>
+							<% } %>
+						
+						</select>
+						<% if (locals.errors && errors.estado) { %>
+							<p class="invalid"><%= errors.estado.msg %> </p>
+						<% } %>
+					</div>
+				</div>
+				<div class="uploadFile">
+				<label for="img" class="form-label">Imagen de producto:</label>
+				<input type="file" name="img" value="fotoProd" class="botonFile">
+			   </div>
+			   <textarea name="detalle" id="detalle" placeholder="Detalle de Producto" class="textArea" value="<%= locals.oldData ? oldData.detalle : null %>"></textarea>
+			   	<% if (locals.errors && errors.detalle) { %>
+					<p class="invalid"><%= errors.detalle.msg %> </p>
+				<% } %>
+			   <button type="submit" class="enviar">Enviar</button>
+			   <button type="reset" class="borrar">Borrar</button>
+			</form>
+	  </section>
+	  </main>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>  
+
+</body>
+</html>

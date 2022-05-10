@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+	<%- include ('../partials/head', {title: "Productos", style: "/css/styles-products.css"}) %>
+<body>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %> 
+      <main>
+          <section class="conteiner-titulo">
+            <h3>Inicio > Productos</h3>
+            <div class="items-select">
+				<select name="category" id="category" class="productCategory">
+					<option value="">Categoría del Producto</option>
+					<option value="aventura">Aventura</option>
+					<option value="entretenimiento">Entretenimiento</option>
+					<option value="gastronomia">Gastronomía</option>
+				</select>
+				<select name="subcategory" id="subcategory" class="productSubCategory">
+					<option value="">Subcategorias</option>
+					<option value="individual">Individual</option>
+					<option value="acompaniado">Acompañado</option>
+					<option value="familiar">Familiar</option>
+				</select>
+			    </div>
+          </section>
+          <section class="contenedor-novedades-productos">
+            <div class="products">
+                <% for(let producto of products) { %>
+                <article>
+                    <div class="novedad-producto">
+                        <p><%= producto.estado.toUpperCase()%></p>
+                    </div>
+                    <img src="<%= producto.img%>", alt="Imagen Aventura" class="product_img">
+                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+                    <div class="nombre-producto">
+                        <p><%= producto.nombre%></p>
+                    </div>
+                    <div class="contenedor-detalle">
+                    <p class="precios">$<%= producto.precio%></p>
+                    <p class="discount">$<%= producto.precioAnterior%></p>
+                    </div>
+                    <div class="acceso-detalle">
+                        <a href="/products/productDetail/<%= producto.id%>"> <p>Ver detalle</p> </a>
+                    </div>
+                </article>
+                <% } %>
+            </div>
+        </section>
+	  
+      </main>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>  
+
+</body>
+</html>

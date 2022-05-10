@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../partials/head', {title: "Login", style: "/css/styles-users.css"}) %>
+    
+<body>
+       
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %>    
+    <main>
+        <section class="conteiner-users">
+            <h3>Login</h3>
+            <form class="form-login" action="/users/login" method="post">
+                
+                <!--<label for="uname">Correo Electronico</label>-->
+                <input type="text" id="email" name="email" placeholder="Correo electrónico" value="<%= locals.oldData ? oldData.email : null %>">
+                <!--<label for="psw"><b>Contraseña</b></label>-->
+                <input type="password" id="password" name="password" placeholder="Contraseña">
+                <ul class="errores"></ul>
+
+                <button type="submit" class="enviar">Enviar</button>
+                
+                <div class="recuerdame">
+                <input type="checkbox" checked="checked" name="recuerdame" id="recuerdame" value="on">
+                <label for="recuerdame">Recuerdame</label>
+                </div>
+                
+                <button type="reset" class="borrar">Borrar</button>
+
+                <p><a href="#">¿Ha olvidado su contraseña?</a></p>
+                
+
+            </form>
+            <a href="/users/register"><button type="reset" class="registro">NO ESTOY REGISTRADO</button></a>
+        </section>
+        
+    </main>
+    
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %> 
+    <script src="/js/login.js"></script>
+
+</body>
+</html>

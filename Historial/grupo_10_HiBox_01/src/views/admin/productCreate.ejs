@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+	<%- include ('../partials/head', {title: "Crear Producto", style: "/css/styles-newProduct.css"}) %>
+<body>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %> 
+      <main>
+		<section class="conteiner-newProduct">
+			<h3>Crear Productos</h3>
+			<form class="form-newProduct" action="../admin/productCreate" method="post" enctype="multipart/form-data">
+				<input type="text" name="nombre" placeholder="Nombre de Producto" required>
+				<div class="items-select">
+				<select name="categoria" id="categoria" class="productCategory">
+					<option disabled value="Categoría del Producto">Categoría del Producto</option>
+					<option value="aventura">Aventura</option>
+					<option value="entretenimiento">Entretenimiento</option>
+					<option value="gastronomia">Gastronomía</option>
+				</select>
+				<select name="subCategoria" id="subCategoria" class="productSubCategory">
+					<option disabled value="Subcategorias">Subcategorias</option>
+					<option value="individual">Individual</option>
+					<option value="acompaniado">Acompañado</option>
+					<option value="familiar">Familiar</option>
+				</select>
+			    </div>
+				<div class="priceDiscount">
+					<input type="number" name="precio" placeholder="Precio de Producto" required>
+					<input type="number" name="precioAnterior" placeholder="Descuento" required>
+					<select name="estado" id="estado" class="productState">
+						<option disabled value="Estado de producto">Estado de producto</option>
+						<option value="nuevo">Nuevo</option>
+						<option value="oferta">Oferta</option>
+						<option value="destacado">Destacado</option>
+					</select>
+				</div>
+				<div class="uploadFile">
+				<label for="img" class="form-label">Imagen de producto:</label>
+				<input type="file" name="img" value="fotoProd" class="botonFile">
+			   </div>
+			   <textarea name="detalle" id="detalle" placeholder="Detalle de Producto" class="textArea"></textarea>
+			   <button type="submit" class="enviar">Enviar</button>
+			   <button type="reset" class="borrar">Borrar</button>
+			</form>
+	  </section>
+	  </main>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>  
+
+</body>
+</html>
