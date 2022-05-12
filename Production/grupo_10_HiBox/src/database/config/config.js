@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": "root",
-    "database": "hiboxDb",
+    "database": "hiboxdb",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

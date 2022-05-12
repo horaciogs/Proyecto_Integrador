@@ -51,6 +51,10 @@ routes.post ("/create", upload.single('img'), controllersUsers.processCreate);
 routes.get ("/profile", authMiddleware, controllersUsers.profile);
 //get a la edición de usuario
 routes.get ("/profile/edit/:id", authMiddleware, controllersUsers.profileEdit);
+
+//render al profile
+routes.get ("/userDetail/:id", authMiddleware, controllersUsers.profileUser);
+
 //tomo los datos para editarlo
 routes.put ("/profile/edit/:id", upload.single('img'), controllersUsers.profileSave);
 

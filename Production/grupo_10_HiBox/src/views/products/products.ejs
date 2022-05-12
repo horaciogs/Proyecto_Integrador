@@ -7,34 +7,30 @@
     <%- include ('../partials/header') %> 
       <main>
           <section class="conteiner-titulo">
-            <h3>Inicio > Productos</h3>
-            <div class="items-select">
-				<select name="categoria" id="categoria" class="productCategory" >
+            <h3><a href="/">Inicio</a> > <a href="/products">Productos</a></h3>
+            <form class="items-select" action="/products/filter" method="GET">
+				<select name="categorias" id="categorias" class="productCategory" >
 					<option disabled value="Categoría del Producto" selected>Categoría del Producto</option>
-					<% let opcionesCat = ['Aventura','Entretenimiento','Gastronomia'] %>
-					<% for (const unaOpcion of opcionesCat) { %>
-						<option value="<%= unaOpcion %>" <%= locals.oldData && (unaOpcion === oldData.categoria)? 'selected' : null %>><%= unaOpcion %></option>
-					<% } %>
+					<% for (let i = 0; i < cat.length; i++) { %>
+						<option value="<%= cat[i].id %>"><%= cat[i].category %></option>
+					<% } %>	
 				</select>
 				<select name="subCategoria" id="subCategoria" class="productSubCategory">
 					<option disabled value="Subcategorias" selected>Subcategorias</option>
-					<% let opcionesSubCat = ['Individual','Acompañado','Familiar'] %>
-					<% for (const unaOpcion of opcionesSubCat) { %>
-						<option value="<%= unaOpcion %>" <%= locals.oldData && (unaOpcion === oldData.subCategoria)? 'selected' : null %>><%= unaOpcion %></option>
-					<% } %>
+					<% for (let i =0; i < subCat.length; i++) { %>
+						<option value="<%= subCat[i].id %>"><%= subCat[i].subCategory %></option>
+					<% } %>	
 				</select>
-                <form class="form-filtro" action="/products" method="get">
+                <div class="form-filtro">
                     <button type="submit" class="go">Go!</button>
-                </form>
-			    </div>
-               </section>
+                </div>
+			</form>
+          </section>
           <section class="contenedor-novedades-productos">
             <div class="products">
                 <% for(let producto of products) { %>
                 <article>
-                    <div class="novedad-producto">
-                        <p><%= producto.states.state%></p>
-                    </div>
+                  
                     <img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
                     <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
                     <div class="nombre-producto">

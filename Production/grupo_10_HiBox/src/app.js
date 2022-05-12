@@ -37,14 +37,15 @@ const pathEngineViews = path.resolve(__dirname, "./views");
 app.use(express.static(pathPublic));
 //tomar los datos con querystring
 app.use(express.urlencoded({ extended: false }));
-// Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
-app.use(methodOverride('_method'));
-//llamo al middleware de cookies
-app.use(cookies());
 //aplico el middleware de session
 app.use(session({secret: 'secret', resave: false, saveUninitialized: false}));
+//llamo al middleware de cookies
+app.use(cookies());
+// Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(methodOverride('_method'));
 //llamo al middleware de usuario logueado
 app.use(middlewareUserLogged);
+
 
 //mediante set indico el Engine a utilizar y la carpeta de views
 app.set('view engine', 'ejs');

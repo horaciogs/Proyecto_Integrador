@@ -15,7 +15,7 @@ const controllers = {
     },
     show: async (req,res) =>{
         let miProducto = await db.Product.findByPk(req.params.id, {
-            include: [{association: "states"}, {association: "categorys"}, {association: "subCategorys"}]
+            include: [{association: "states"}, {association: "categorys"}, {association: "subcategorys"}]
         });
         res.render(path.resolve(__dirname, '../views/admin/productDetail'), {miProducto})
     },
@@ -46,7 +46,7 @@ const controllers = {
         let cat = await db.Category.findAll();
         let subCat = await db.SubCategory.findAll();
         let productoEditar = await db.Product.findByPk(req.params.id, {
-            include: [{association: "categorys"}, {association: "subCategorys"}, {association: "states"}]
+            include: [{association: "categorys"}, {association: "subcategorys"}, {association: "states"}]
         });
         
         res.render (path.resolve(__dirname,'../views/admin/productEdit'), {productoEditar, sta, cat, subCat});
@@ -54,7 +54,7 @@ const controllers = {
     update: async (req,res) =>{
         
         let productoEditar = await db.Product.findByPk(req.params.id, {
-            include: [{association: "categorys"}, {association: "subCategorys"}, {association: "states"}]
+            include: [{association: "categorys"}, {association: "subcategorys"}, {association: "states"}]
         });
         
             let img="";
@@ -78,9 +78,10 @@ const controllers = {
                     id: req.params.id
                 }
             });
-
-            let products = await db.Product.findAll();
-            res.render (path.resolve(__dirname,'../views/admin/adminProduct'), { products });
+            productoEditar = await db.Product.findByPk(req.params.id, {
+                include: [{association: "states"}, {association: "categorys"}, {association: "subcategorys"}]
+            });
+            res.render(path.resolve(__dirname, '../views/admin/productDetail'), {miProducto: productoEditar})
     },
     erase: async (req,res) => {
         await db.Product.destroy({
@@ -90,7 +91,7 @@ const controllers = {
         });
 
         let products = await db.Product.findAll();
-        res.render (path.resolve(__dirname,'../views/admin/adminProduct'), { products });
+        res.render (path.resolve(__dirname,'../views/admin/adminProduct/'), { products });
     }
 
 };

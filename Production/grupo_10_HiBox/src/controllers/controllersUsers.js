@@ -67,34 +67,48 @@ const controllers = {
             }
         });
         if(userToLogin) {
-               if (req.body.recuerdame) {
-                    const token = crypto.randomBytes(64).toString('base64');
-                    res.cookie('userToken', token, {maxAge: ((1000)*60)*60});
-                    await db.TokenUser.create({
-                        email: userToLogin.email,
-                        token: token
-                    });
-                    
-                }
+               if(bcryptjs.compareSync(req.body.password, userToLogin.password)) {
+                    delete userToLogin.password;
+                    req.session.userLogged = userToLogin;
+
+                    if (req.body.recuerdame) {
+                            const token = crypto.randomBytes(64).toString('base64');
+                            res.cookie('userToken', token, {maxAge: ((1000)*60)*60});
+                            await db.TokenUser.create({
+                                email: userToLogin.email,
+                                token: token
+                            });
+                            
+                        }
                 
-                //login de user administrador o user comun
-                if(userToLogin.userPrivilege) { 
-                    return res.render('../views/users/profile', {user: userToLogin})
-                } else {
-                    let products = await db.Product.findAll({
-                        include: [{association: "states"}]
-                    });
-                    return res.render('index', { products });
-                }
+                    //login de user administrador o user comun
+                    if(userToLogin.userPrivilege) { 
+                        return res.render('../views/users/profile', {user: userToLogin})
+                    } else {
+                        let products = await db.Product.findAll({
+                            include: [{association: "states"}]
+                        });
+                        return res.render('index', { products });
+                    }
             } else {
                 return res.render('../views/users/login', {
                     errors: {
-                        email: {
-                            msg: 'El usuario ingresado no se encuentra registrado'
+                        password: {
+                            msg: 'El password ingresado es incorrecto'
                         }
-                    }
-                });
+                    },
+                    oldData: req.body
+                });    
             }
+        } else {
+            return res.render('../views/users/login', {
+                errors: {
+                    email: {
+                        msg: 'El usuario ingresado no se encuentra registrado'
+                    }
+                }
+            });
+        }
     },
     
     create: (req , res) => {
@@ -154,10 +168,16 @@ const controllers = {
         res.render('../views/users/profile', { user: req.session.userLogged});
     },
 
+    profileUser: async (req,res) => {
+        let user = await db.User.findByPk(req.params.id);
+        res.render('../views/users/userDetail', { user });
+    },
+
     profileEdit: async (req,res) => {
         let user = await db.User.findByPk(req.params.id);
         res.render('../views/users/profileEdit', { user });
     },
+
 
     profileSave: async (req,res) => {            
                         let img="";

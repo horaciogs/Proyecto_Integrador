@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+	<%- include ('../partials/head', {title: "Productos", style: "/css/styles-products.css"}) %>
+<body>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %> 
+      <main>
+          <section class="conteiner-titulo">
+            <h3><a href="/">Inicio</a> > <a href="/products">Productos</a> > Gastronomía</h3>
+          </section> 
+          <section class="contenedor-novedades-productos">
+            <div class="products">
+                <% for(let producto of products) { %>
+                    <% if (producto.categorys.category === "Gastronomía") { %>
+                        <article>
+                            <div class="novedad-producto">
+                                <p><%= producto.states.state%></p>
+                            </div>
+                            <img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
+                            <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+                            <div class="nombre-producto">
+                                <p><%= producto.name%></p>
+                            </div>
+                            <div class="contenedor-detalle">
+                            <p class="precios">$<%= producto.price%></p>
+                            <p class="discount">$<%= producto.priceBefore%></p>
+                            </div>
+                            <div class="acceso-detalle">
+                                <a href="/products/productDetail/<%= producto.id%>"> <p>Ver detalle</p> </a>
+                            </div>
+                        </article>
+                    <% } %>
+                <% } %>
+            </div>
+        </section>
+	  
+      </main>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>  
+
+</body>
+</html>

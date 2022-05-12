@@ -9,7 +9,7 @@
     <main>
         <!-- Inicio contenedor detalle de producto -->
         <section class="conteiner-titulo">
-            <h3>Inicio > Productos > <%= miProducto.name%></h3>
+            <h3><a href="/">Inicio</a> > <a href="/products">Productos</a> > <%= miProducto.name%></h3>
         </section>
         <section class="main-product-detail-seccion">
             <div class="detalle-producto">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="subCategoria">
                         <p>Sub Categoría:</p>
-                        <h2><%= miProducto.subCategorys.subCategory%></h2>
+                        <h2><%= miProducto.subcategorys.subCategory%></h2>
                     </div>
                     <div class="cantidad-input">
                         <p>Cantidad:</p>

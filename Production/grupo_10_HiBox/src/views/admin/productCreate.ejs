@@ -7,6 +7,7 @@
     <%- include ('../partials/header') %> 
       <main>
 		<section class="conteiner-newProduct">
+			<div class="cancel-button"><a href="/users/adminUsers"><i class="fas fa-times"></i></a></div>
 			<h3>Crear Productos</h3>
 			<form class="form-newProduct" action="/admin/productCreate" method="POST" enctype="multipart/form-data">
 				<input type="text" id="nombre" name="nombre" placeholder="Nombre de Producto" value="<%= locals.oldData ? oldData.nombre : null %>">

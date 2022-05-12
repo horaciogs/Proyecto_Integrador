@@ -13,18 +13,19 @@ function middlewareUserLogged (req,res,next) {
                 token: req.cookies.userToken
             }
         })
-        .then((usertoken) => {
-            if(usertoken) {
+        .then((userTokenInfo) => {
+            if(userTokenInfo) {
                 db.User.findOne({
                     where: {
-                        email: usertoken.email
+                        email: userTokenInfo.email
                     }
                 })
-                .then((user) => {
-                    if(user) {
-                        delete user.password;
-                        res.locals.userLogged = user;
-                        req.session.userLogged = user;
+                .then((users) => {
+                    if(users) {                      
+                        delete users.password;
+                        res.locals.isLogged = true;
+                        res.locals.userLogged = users;
+                        req.session.userLogged = users;
                     }
                 });
             }

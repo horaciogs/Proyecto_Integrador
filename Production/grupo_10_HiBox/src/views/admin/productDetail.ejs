@@ -30,7 +30,7 @@
                 </div>
                 <div class="subCategoria">
                     <p>Sub Categoría:</p>
-                    <h2><%= miProducto.subCategorys.subCategory%></h2>
+                    <h2><%= miProducto.subcategorys.subCategory%></h2>
                 </div>
                 </div>
                 <hr>
@@ -56,7 +56,7 @@
                 <a href="/admin/adminProduct">Volver</a>
             </div>
             <div class="crear">
-                <a href="/admin/productCreate">Agregar un nuevo producto</a>
+                <a href="/admin/productEdit/<%= miProducto.id %>">Editar producto</a>
             </div>
             <!--<div class="edit">
                 <a href="/admin/productEdit">Editar</a>
