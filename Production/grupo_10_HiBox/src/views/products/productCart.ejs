@@ -9,69 +9,55 @@
         <main>
 			<section class="conteiner-shop">
 				<h3>Carrito de Compras</h3>
-				<div>
-					<article class="conteiner-productos-shop">
-						<div class="product-img-shop">
-						<img src="/images/img-producto-aventura.jpg", alt="Imagen Aventura">
-					    </div>
-						<div class="icono-trash-producto"><i class="far fa-trash-alt"></i>
-						</div>
-						<div class="contenedor-detalle-shop">
-							<div class="nombre-producto-shop">
-								<p>HiBox Aventura - Combo 1</p>
+				<div> 
+					
+						<% for(let i=0; i< productUser.products.length; i++) { %>
+						<article class="conteiner-productos-shop">
+							<div class="product-img-shop">
+							<img src="<%= productUser.products[i].productImage%>", alt="Imagen">
 							</div>
-							<div class="conteiner-valores">
-								<form action="/productCart" method="post">
-								<label for="cantidad">Cantidad</label>
-								<input type="number" id="cantidad" value="1" name="cantidad" min="1" max="100"> 
+			
+							<form class="icono-trash-producto" action="/products/productCart/<%= productUser.products[i].id%>?_method=DELETE" method="POST" enctype="multipart/form-data">	
+								<button type="submit" class="delete"><i class="far fa-trash-alt" ></i></button>
 							</form>
-								<p class="precio-shop">$6.770</p>
-							    <p class="discount-shop">$9.850</p>
-							</div>
-							<div class="acceso-detalle-shop">
-								<p>Ver detalle</p> 
-							</div>
-						   
-						</div>
+			
+							<div class="contenedor-detalle-shop">
+								<div class="nombre-producto-shop">
+									<p><%= productUser.products[i].name %></p>
+								</div>
+								<div class="conteiner-valores">
+									<form action="/productCart/<%= productUser.products[i].id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+									<label for="cantidad">Cantidad</label>
+									<input type="number" id="cantidad" value="1" name="cantidad" min="1" max="100"> 
+									<button type="submit" class="enviar">+</button>
+									</form>
+									<p class="precio-shop"><%= productUser.products[i].price %></p>
+									<p class="discount-shop"><%= productUser.products[i].priceBefore %></p>
+								</div>
+								<div class="acceso-detalle-shop">
+									<a href="/products/productDetail/<%= productUser.products[i].id%>"><p>Ver detalle</p></a>
+								</div>
+							
+							</div>	
+						</article>
+						<% } %>
 						
-					</article>
-					<article class="conteiner-productos-shop">
-						<div class="product-img-shop">
-						<img src="/images/img-producto-aventura.jpg", alt="Imagen Aventura">
-					    </div>
-						<div class="icono-trash-producto"><i class="far fa-trash-alt"></i>
-						</div>
-						<div class="contenedor-detalle-shop">
-							<div class="nombre-producto-shop">
-								<p>HiBox Aventura - Combo 1</p>
+						<div class="conteiner-totals-shop">
+							<div class="label-total">
+								<p>Total</p>
 							</div>
-							<div class="conteiner-valores">
-								<form action="/productCart" method="post">
-								<label for="cantidad">Cantidad</label>
-								<input type="number" id="cantidad" value="1" name="cantidad" min="1" max="100"> 
-							</form>
-								<p class="precio-shop">$6.770</p>
-							    <p class="discount-shop">$9.850</p>
+							<% let acum = 0; %>
+							<% for(let i=0; i< productUser.products.length; i++) { %>
+								<% acum += productUser.products[i].price %>
+							<% } %>
+							<div class="total">
+								<p><%= acum %></p>
 							</div>
-							<div class="acceso-detalle-shop">
-								<p>Ver detalle</p> 
+							<div class="comprar">
+								<p ><a href="#">Comprar</a></p>
 							</div>
-						   
 						</div>
-						
-					</article>
-					<div class="conteiner-totals-shop">
-						<div class="label-total">
-							<p>Total</p>
-						</div>
-						<div class="total">
-							<p>$24.000</p>
-						</div>
-						<div class="comprar">
-							<p ><a href="#">Comprar</a></p>
-						</div>
-		
-					</div>
+				
 				</div>
 				
 			</section>
@@ -81,19 +67,19 @@
 				<h3>DESTACADOS</h3>
 				<div class="products">
 					<% for(let producto of products) { %>
-						<% if (producto.estado == "destacado" && producto.id < 15) { %>
+						<% if (producto.states.state == "Destacado" && producto.id < 15) { %>
 					<article>
 						<div class="novedad-producto">
-							<p><%= producto.estado.toUpperCase()%></p>
+							<p><%= producto.states.state%></p>
 						</div>
-						<img src="<%= producto.img%>", alt="Imagen Aventura" class="product_img">
+						<img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
 						<div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
 						<div class="nombre-producto">
-							<p><%= producto.nombre%></p>
+							<p><%= producto.name%></p>
 						</div>
 						<div class="contenedor-detalle">
-						<p class="precios">$<%= producto.precio%></p>
-						<p class="discount">$<%= producto.precioAnterior%></p>
+						<p class="precios">$<%= producto.price%></p>
+						<p class="discount">$<%= producto.priceBefore%></p>
 						</div>
 						<div class="acceso-detalle">
 							<a href="/products/productDetail/<%= producto.id%>"> <p>Ver detalle</p> </a>
@@ -101,7 +87,6 @@
 					</article>
 					  <% } %>
 					<% } %>
-	
 				</div>
 			</section>
 

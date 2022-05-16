@@ -45,7 +45,11 @@
                         <p><%= producto.states.state%></p>
                     </div>
                     <img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
-                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+                    
+                    <form class="icono-plus-prtoducto" action="/products/productCart/<%= producto.id%>" method="POST" enctype="multipart/form-data">
+                        <i class="fas fa-plus"><button type="submit" class="delete"></button></i>
+                    </form>
+                    
                     <div class="nombre-producto">
                         <p><%= producto.name%></p>
                     </div>
@@ -88,7 +92,11 @@
                         <p><%= producto.states.state%></p>
                     </div>
                     <img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
-                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+                    
+                    <form class="icono-plus-prtoducto" action="/products/productCart/<%= producto.id%>" method="POST" enctype="multipart/form-data">
+                        <i class="fas fa-plus"><button type="submit" class="delete"></button></i>
+                    </form>
+                    
                     <div class="nombre-producto">
                         <p><%= producto.name%></p>
                     </div>

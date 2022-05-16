@@ -180,6 +180,7 @@ const controllers = {
 
 
     profileSave: async (req,res) => {            
+                        let userCheck = await db.User.findByPk(req.params.id);
                         let img="";
                         if(req.file != undefined){
                             img = "/images/users/" + req.file.filename
@@ -192,11 +193,18 @@ const controllers = {
                             privilege = 1;
                             }
 
+                        let passwordCheck = "";
+                        if (req.body.password) {
+                            passwordCheck = bcryptjs.hashSync(req.body.password, 10);
+                        } else {
+                            passwordCheck = userCheck.password;
+                        }
+
                         await db.User.update({
                             firstName: req.body.firstName,
                             lastName: req.body.lastName,
                             email: req.body.email,
-                            password: bcryptjs.hashSync(req.body.password, 10),
+                            password: passwordCheck,
                             //birthDate: userData.birthDate,
                             userImage: img,
                             userPrivilege: privilege

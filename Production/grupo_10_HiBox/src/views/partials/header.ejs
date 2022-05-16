@@ -1,3 +1,4 @@
+<a href="https://wa.me/+5491134812957" target="_blank" style="position: fixed;bottom: 20px;right: 20px;z-index: 1049"><img src="/images/whatsapp.png" width="50" alt="HiBox Whatsapp" /></a>
 <header class="main-header">
     <section class="section-oferta">
         <p>ENVÍOS SIN CARGO A PARTIR DE $9000 + HASTA 6 CUOTAS SIN INTERÉS</p>
@@ -55,7 +56,11 @@
     </div>
     <% if (locals.isLogged) { %>
         <div class="imgViewMobil">
-              <a href="/users/profile"> <img src="<%= locals.userLogged.userImage %>"> </a>
+            <% if(locals.userLogged.userPrivilege == 1) { %>
+                <a href="/users/profile"> <img src="<%= locals.userLogged.userImage %>"> </a>
+            <% } else { %>
+                <a href="/users/profile/edit/<%= locals.userLogged.id %>"> <img src="<%= locals.userLogged.userImage %>"> </a>
+            <% } %>            
         </div>
     <% } else { %>
         <div class="loginMobile">
@@ -81,6 +86,9 @@
             <li><a href="/about">About</a></li>
             <li><a href="/faqs">FAQs</a></li>
             <li><a href="/contact-us">Contact us</a></li>
+            <% if (locals.isLogged) { %>
+            <li><a href="/users/logout">LOGOUT</a></li>
+            <% } %>
         </ul>
     </div>
     <script src="/js/header.js"></script>

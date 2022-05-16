@@ -58,8 +58,38 @@ const controllers = {
     },
 
     cart: async (req , res) => {
-        let products = await db.Product.findAll();
-        res.render('../views/products/productCart', { products });
+        let productUser = await db.User.findByPk(req.session.userLogged.id, {include: [{association: "products"}]});
+        let products = await db.Product.findAll({
+            include: [{association: "states"}, {association: "categorys"}, {association: "subcategorys"}]
+        });
+        res.render('../views/products/productCart', { products, productUser });
+    },
+
+    cartAddItem: async (req,res) => {
+        await db.ProductCart.create({
+            userId: req.session.userLogged.id,
+            productId: req.params.id 
+        });
+        let productUser = await db.User.findByPk(req.session.userLogged.id, {include: [{association: "products"}]});
+        let products = await db.Product.findAll({
+            include: [{association: "states"}, {association: "categorys"}, {association: "subcategorys"}]
+        });
+        res.render('../views/products/productCart', { products, productUser });
+    },
+
+    eraseCart: async (req,res) => {
+        await db.ProductCart.destroy({
+            where: {
+                userId: req.session.userLogged.id,
+                productId: req.params.id
+            }
+        });
+        
+        let productUser = await db.User.findByPk(req.session.userLogged.id, {include: [{association: "products"}]});
+        let products = await db.Product.findAll({
+            include: [{association: "states"}, {association: "categorys"}, {association: "subcategorys"}]
+        });
+        res.render('../views/products/productCart', { products, productUser });
     },
 
     listarGastronomia: async (req,res) =>{
@@ -68,12 +98,14 @@ const controllers = {
         });
         res.render(path.resolve(__dirname, '../views/products/gastronomia'), { products })
     },
+
     listarEntretenimiento: async (req,res) =>{
         let products = await db.Product.findAll({
             include: [{association: "states"}, {association: "categorys"}, {association: "subcategorys"}]
         });
         res.render(path.resolve(__dirname, '../views/products/entretenimiento'), { products })
     },
+
     listarAventura: async (req,res) =>{
         let products = await db.Product.findAll({
             include: [{association: "states"}, {association: "categorys"}, {association: "subcategorys"}]

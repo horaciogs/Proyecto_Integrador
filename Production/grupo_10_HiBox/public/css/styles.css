@@ -310,6 +310,8 @@ footer {
     padding: 20px;
     color: white !important;
     background-color: #1c1b1f;
+    position: fixed;
+    
 }
 
 footer .logo-footer{

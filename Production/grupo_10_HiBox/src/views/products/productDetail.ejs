@@ -46,9 +46,9 @@
                 <div class="detalle-producto">
                 <p><%= miProducto.detail%></p>
                 </div>
-                <div class="comprar">
-                    <p ><a href="#"><i class="fas fa-shopping-cart"></i> Comprar</a></p>
-                </div>
+                <form class="comprar" action="/products/productCart/<%= miProducto.id%>" method="POST" enctype="multipart/form-data">
+                    <button type="submit" class="enviar"><i class="fas fa-shopping-cart"></i> Comprar</button>
+                </form>
             </div>
         </section>
         

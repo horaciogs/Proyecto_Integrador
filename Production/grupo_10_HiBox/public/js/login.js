@@ -5,7 +5,7 @@ window.onload = function() {
     let regUserEmail = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
 
     form.addEventListener('submit', (e) => {
-        
+        e.preventDefault();
         let errors = [];
         
         let email = document.querySelector('#email');
@@ -28,7 +28,7 @@ window.onload = function() {
         //Aquí controlo que es lo que debo hacer si hay o no errores en el formulario
 
         if (errors.length > 0) {
-            e.preventDefault();
+            
             let ulErrors = document.querySelector('.errores');
             ulErrors.classList.add('alert-warning');
             ulErrors.innerHTML = '';

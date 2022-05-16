@@ -19,21 +19,22 @@
         margin-bottom: 80px;
     }
 .listado-productos {
-    /* border: solid 1px red; */
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     margin: 20px 0;
 }
 .list-buttons {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     flex-direction: row;
+    margin-top: 15px;
 }
+
 .nombre-listado {
         color: #9c8c84;
         font-size: 16px;
+
 }
 .titulo-seccion {
     display: flex;
@@ -105,9 +106,6 @@
         color: #FFF;
     }
 
-
-
-
     .delete {
         background-color: #F95F62;
         border: solid 1px #F95F62;
@@ -134,4 +132,16 @@
         color: #fa5f63;
     }
 
-    
+    @media (min-width: 560px){
+        
+        .listado-productos {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        } 
+        .list-buttons {
+        justify-content: end;
+        margin: 0px;
+        }
+    }

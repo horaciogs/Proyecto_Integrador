@@ -159,3 +159,18 @@
         padding: 10px;
         line-height: 20px;
     }
+    .cancel-button{
+        display: flex;
+        justify-content: flex-end;}
+    
+    .cancel-button a{
+        color:#7d92a5;
+        font-size: 20px;
+        cursor:pointer;
+        position: relative;
+        transition: all 450ms;
+        
+    }
+    .cancel-button a:hover{
+        color:#F95F62;
+    }

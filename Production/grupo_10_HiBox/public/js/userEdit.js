@@ -7,7 +7,7 @@ window.onload = function() {
     let regUserEmail = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
 
     form.addEventListener('submit', (e) => {
-        
+        e.preventDefault();
         let errors = [];
         
         let firstName = document.querySelector('#firstName');
@@ -39,7 +39,7 @@ window.onload = function() {
             email.classList.add('is-valid');
             email.classList.remove('is-invalid');
         };
-        if (password.value == '' || !password.value.trim()) {
+        /*if (password.value == '' || !password.value.trim()) {
             errors.push('Por favor verificar el campo Contraseña');
             password.classList.add('is-invalid');
         } else if (password.value.length < 6) {
@@ -52,17 +52,25 @@ window.onload = function() {
         if (confirmPsw.value == '') {
             errors.push('Por favor verificar el campo Repetir Contraseña');
             confirmPsw.classList.add('is-invalid');
-        } else if (confirmPsw.value != password.value) {
-            errors.push('Las contraseñas deben ser iguales');
-            confirmPsw.classList.add('is-invalid');
-        } else {
-            confirmPsw.classList.add('is-valid');
-            confirmPsw.classList.remove('is-invalid');
-        };
+        } else */
+        if (password.value != '' && confirmPsw.value != ''){
+
+            if (confirmPsw.value != password.value) {
+                errors.push('Las contraseñas deben ser iguales');
+                confirmPsw.classList.add('is-invalid');
+            } else if ((password.value.length < 6) || (confirmPsw.value.length <6)) {
+                errors.push('La contraseña debe tener una longitud mínima de 6 caracteres');
+                confirmPsw.classList.add('is-invalid');
+            }
+            else {
+                confirmPsw.classList.add('is-valid');
+                confirmPsw.classList.remove('is-invalid');
+            };
+        }
         //Aquí controlo que es lo que debo hacer si hay o no errores en el formulario
 
         if (errors.length > 0) {
-            e.preventDefault();
+            
             let ulErrors = document.querySelector('.errores');
             ulErrors.classList.add('alert-warning');
             ulErrors.innerHTML = '';

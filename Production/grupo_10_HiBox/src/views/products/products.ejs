@@ -10,13 +10,13 @@
             <h3><a href="/">Inicio</a> > <a href="/products">Productos</a></h3>
             <form class="items-select" action="/products/filter" method="GET">
 				<select name="categorias" id="categorias" class="productCategory" >
-					<option disabled value="Categoría del Producto" selected>Categoría del Producto</option>
+					<option disabled value="Categoría del Producto" selected>Categoría</option>
 					<% for (let i = 0; i < cat.length; i++) { %>
 						<option value="<%= cat[i].id %>"><%= cat[i].category %></option>
 					<% } %>	
 				</select>
 				<select name="subCategoria" id="subCategoria" class="productSubCategory">
-					<option disabled value="Subcategorias" selected>Subcategorias</option>
+					<option disabled value="Subcategorias" selected>Subcategoria</option>
 					<% for (let i =0; i < subCat.length; i++) { %>
 						<option value="<%= subCat[i].id %>"><%= subCat[i].subCategory %></option>
 					<% } %>	
@@ -32,7 +32,11 @@
                 <article>
                   
                     <img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
-                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+                    
+                    <form class="icono-plus-prtoducto" action="/products/productCart/<%= producto.id%>" method="POST" enctype="multipart/form-data">
+                        <i class="fas fa-plus"><button type="submit" class="delete"></button></i>
+                    
+                    </form>
                     <div class="nombre-producto">
                         <p><%= producto.name%></p>
                     </div>

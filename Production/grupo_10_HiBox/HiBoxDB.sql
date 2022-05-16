@@ -150,9 +150,36 @@ LOCK TABLES `tokenusers` WRITE;
 /*!40000 ALTER TABLE `tokenusers` ENABLE KEYS */;
 UNLOCK TABLES;
 
+
+--
+-- Table structure for table `productscart`
+--
+
+DROP TABLE IF EXISTS `productscart`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `productscart` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userId` int(11) NOT NULL,
+  `productId` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `productscart`
+--
+
+LOCK TABLES `productscart` WRITE;
+/*!40000 ALTER TABLE `productscart` DISABLE KEYS */;
+/*!40000 ALTER TABLE `productscart` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
 --
 -- Table structure for table `users`
 --
+
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

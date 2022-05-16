@@ -15,8 +15,10 @@ routes.get ("/", controllersProduct.index);
 routes.get ("/filter", controllersProduct.indexFormulario);
 routes.get('/productDetail/:id', controllersProduct.show);
 routes.get ("/productCart", controllersProduct.cart);
+routes.post ("/productCart/:id", controllersProduct.cartAddItem);
 routes.get ("/gastronomia", controllersProduct.listarGastronomia);
 routes.get ("/entretenimiento", controllersProduct.listarEntretenimiento);
 routes.get ("/aventura", controllersProduct.listarAventura);
+routes.delete('/productCart/:id', controllersProduct.eraseCart);
 
 module.exports = routes;

@@ -8,7 +8,7 @@ window.onload = function() {
     let regMessage = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
 
     form.addEventListener('submit', (e) => {
-        
+        e.preventDefault();
         let errors = [];
         
         let firstName = document.querySelector('#firstName');
@@ -49,7 +49,7 @@ window.onload = function() {
         //Aquí controlo que es lo que debo hacer si hay o no errores en el formulario
 
         if (errors.length > 0) {
-            e.preventDefault();
+            
             let ulErrors = document.querySelector('.errores');
             ulErrors.classList.add('alert-warning');
             ulErrors.innerHTML = '';
