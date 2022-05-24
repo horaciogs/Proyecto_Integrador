@@ -46,9 +46,16 @@
                 <div class="detalle-producto">
                 <p><%= miProducto.detail%></p>
                 </div>
-                <form class="comprar" action="/products/productCart/<%= miProducto.id%>" method="POST" enctype="multipart/form-data">
-                    <button type="submit" class="enviar"><i class="fas fa-shopping-cart"></i> Comprar</button>
-                </form>
+                <div class="conteiner-comprando">
+                    <form class="comprar"
+                        <% if (locals.isLogged) { %>
+                            action="/products/productCart/<%= miProducto.id%>" method="POST" enctype="multipart/form-data"
+                        <% } else { %>
+                            action="/users/login" method="GET"
+                        <% } %> >
+                         <button type="submit" class="enviar"><i class="fas fa-shopping-cart"></i> Comprar</button>
+                     </form>
+                </div>
             </div>
         </section>
         
@@ -56,14 +63,23 @@
         <section class="contenedor-novedades-productos">
             <h3>DESTACADOS</h3>
             <div class="products">
+                <% let contador = 0 %>
                 <% for(let producto of products) { %>
-                    <% if (producto.states.state == "Destacado" && producto.id < 15) { %>
+                    <% if (producto.states.state == "Destacado" && contador < 4) { %>
                 <article>
+                    <% contador = contador + 1; %>
                     <div class="novedad-producto">
                         <p><%= producto.states.state%></p>
                     </div>
                     <img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
-                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+                    <form class="icono-plus-prtoducto" 
+                        <% if (locals.isLogged) { %>
+                            action="/products/productCart/<%= producto.id%>" method="POST" enctype="multipart/form-data"
+                        <% } else { %>
+                            action="/users/login" method="GET"
+                        <% } %> >
+                        <button type="submit" class="buttonCart"  ><i class="fas fa-plus"></i></button>
+                    </form>
                     <div class="nombre-producto">
                         <p><%= producto.name%></p>
                     </div>

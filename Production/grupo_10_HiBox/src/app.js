@@ -33,6 +33,13 @@ const routesAdmin = require("./routes/routesAdmin");
 const pathPublic = path.resolve(__dirname, "../public");
 const pathEngineViews = path.resolve(__dirname, "./views");
 
+//Aquí llamo a la ruta de las api de movies
+const apiUsersRouter = require('./routes/api/users')
+//Aquí llamo a la ruta de las api de actors
+const apiCategorysRouter = require('./routes/api/categorys')
+//Aquí llamo a la ruta de las api de actors
+const apiProductsRouter = require('./routes/api/products')
+
 //mediante use le asigno la carpeta "public" al proyecto para alojar todos los elementos estaticos (imagenes / css)
 app.use(express.static(pathPublic));
 //tomar los datos con querystring
@@ -63,6 +70,11 @@ app.use ('/faqs', routesMain);
 app.use ('/users', routesUsers);
 app.use ('/products', routesProduct);
 app.use ('/admin', routesAdmin);
+
+//Aquí creo la colección de mis recursos de movies (APIs)
+app.use('/api/users',apiUsersRouter);
+app.use('/api/products',apiProductsRouter);
+app.use('/api/categorys',apiCategorysRouter);
 
 app.use((req,res,next) => {
     res.status(404).render('not-found')

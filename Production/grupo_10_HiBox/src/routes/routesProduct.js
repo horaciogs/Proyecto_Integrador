@@ -20,5 +20,6 @@ routes.get ("/gastronomia", controllersProduct.listarGastronomia);
 routes.get ("/entretenimiento", controllersProduct.listarEntretenimiento);
 routes.get ("/aventura", controllersProduct.listarAventura);
 routes.delete('/productCart/:id', controllersProduct.eraseCart);
+routes.delete('/productCart/delete', controllersProduct.eraseCartAll);
 
 module.exports = routes;

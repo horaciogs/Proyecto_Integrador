@@ -54,25 +54,24 @@
     margin-top: 20px;
 }
 
-.comprar p a{
-    text-decoration: none;
-    color: white;
-}
-.comprar p {
-    text-align: center;
-    background-color: #F95F62;
-    width: 100%;
-    padding: 10px;
+.comprar button{
     border-radius: 30px;
-    margin-top: 30px;
+    width: 100%;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+    background-color: #7d92a5;
+    border: none !important;
     transition: all 450ms;
 }
 
-.comprar:hover p {
-    background-color: #7d92a5;
-       
+.comprar button:hover {
+    background-color: #F95F62;
 }
 
+.conteiner-comprando {
+    margin-top: 30px;
+}
 .cantidad-input input{
         margin-top: -10px;
         width: 56px;
@@ -89,6 +88,15 @@
     /* justify-content: space-between; */
 }
 
+h3 a {
+    text-decoration: none;
+    color: #666;
+    transition: all 450ms;
+}
+
+h3 a:hover {
+    color: #F95F62;
+}
 .detalle-compra h3 {
     font-size: 30px;
     border-bottom: solid 1px #222;

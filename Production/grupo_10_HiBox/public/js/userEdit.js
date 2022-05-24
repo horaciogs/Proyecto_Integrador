@@ -66,7 +66,20 @@ window.onload = function() {
                 confirmPsw.classList.add('is-valid');
                 confirmPsw.classList.remove('is-invalid');
             };
-        }
+        };
+        if (img.value) {
+            fileName = img.value;
+            idxDot = fileName.lastIndexOf(".") + 1,
+            extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+            if (!(extFile == "jpg" || extFile == "jpeg" || extFile == "png")){
+                errors.push('Debe cargar una imagen en formato jpg/jpeg/png');
+                img.classList.add('is-invalid');
+
+            }
+        } else {
+            img.classList.add('is-valid');
+            img.classList.remove('is-invalid');
+        };
         //Aquí controlo que es lo que debo hacer si hay o no errores en el formulario
 
         if (errors.length > 0) {

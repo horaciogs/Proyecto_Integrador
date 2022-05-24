@@ -92,6 +92,20 @@ const controllers = {
         res.render('../views/products/productCart', { products, productUser });
     },
 
+    eraseCartAll: async (req,res) => {
+        await db.ProductCart.destroy({
+            where: {
+                userId: req.params.id
+            }
+        });
+        
+        let productUser = await db.User.findByPk(req.session.userLogged.id, {include: [{association: "products"}]});
+        let products = await db.Product.findAll({
+            include: [{association: "states"}, {association: "categorys"}, {association: "subcategorys"}]
+        });
+        res.render('../views/products/productCart', { products, productUser });
+    },
+
     listarGastronomia: async (req,res) =>{
         let products = await db.Product.findAll({
             include: [{association: "states"}, {association: "categorys"}, {association: "subcategorys"}]

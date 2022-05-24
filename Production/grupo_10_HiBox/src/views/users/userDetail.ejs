@@ -17,14 +17,32 @@
                 <input type="text" id="lastName" name="lastName" value="<%= locals.oldData ? oldData.lastName : user.lastName %>">
                 <input type="text" id="email" name="email" value="<%= locals.oldData ? oldData.email : user.email %>">
                 
-                 <% if (locals.isLogged) { %>
-                    <% if(locals.userLogged.userPrivilege == 1) { %>
+                <% if (locals.isLogged) { %>
+                    <% if(locals.userLogged.userPrivilege === 1) { %>
                         <div class="recuerdame">
-                            <input type="checkbox" name="userPrivileges" id="userPrivileges" value="on">
-                            <label for="recuerdame">Permisos de administrador</label>
+                            <input type="checkbox" 
+                            <% if(user.userPrivilege) { %>
+                                checked="checked" disabled="disabled" 
+                                name="userPrivileges" id="userPrivileges">
+                                <input name="userPrivileges" type="hidden" value="on">
+                            <% } else { %>
+                                disabled="disabled" 
+                                name="userPrivileges" id="userPrivileges">
+                                <input name="userPrivileges" type="hidden">
+                            <% } %>
+                    <% } else if(locals.userLogged.userPrivilege === 2) { %>
+                        <div class="recuerdame">
+                            <input type="checkbox" 
+                            <% if(user.userPrivilege) { %>
+                                checked="checked"
+                                name="userPrivileges" id="userPrivileges" value="on">
+                            <% } else { %>
+                                name="userPrivileges" id="userPrivileges" value="on">
+                            <% } %>
+                    <% } %> 
+                        <label for="recuerdame">Permisos de administrador</label>
                         </div>
-                    <% } %>
-                <% } %>
+                <% } %> 
 
             </form>
         </section>

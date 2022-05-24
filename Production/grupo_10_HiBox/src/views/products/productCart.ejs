@@ -18,19 +18,23 @@
 							</div>
 			
 							<form class="icono-trash-producto" action="/products/productCart/<%= productUser.products[i].id%>?_method=DELETE" method="POST" enctype="multipart/form-data">	
-								<button type="submit" class="delete"><i class="far fa-trash-alt" ></i></button>
+								<button type="submit" class="delete"><i class="fas fa-trash-alt"></i></button>
 							</form>
 			
 							<div class="contenedor-detalle-shop">
 								<div class="nombre-producto-shop">
 									<p><%= productUser.products[i].name %></p>
 								</div>
+								
 								<div class="conteiner-valores">
-									<form action="/productCart/<%= productUser.products[i].id%>?_method=PUT" method="POST" enctype="multipart/form-data">
-									<label for="cantidad">Cantidad</label>
+									<div class="cantidad-input">
+										<p>Cantidad:</p>
+										<input type="number" name="cantidad" placeholder="1" required>
+									</div>
+									<!--<label for="cantidad">Cantidad</label>
+									<button type="" class="enviar" class="lessButton">-</button>
 									<input type="number" id="cantidad" value="1" name="cantidad" min="1" max="100"> 
-									<button type="submit" class="enviar">+</button>
-									</form>
+									<button type="" class="enviar" class="plusButton">+</button>-->
 									<p class="precio-shop"><%= productUser.products[i].price %></p>
 									<p class="discount-shop"><%= productUser.products[i].priceBefore %></p>
 								</div>
@@ -53,9 +57,10 @@
 							<div class="total">
 								<p><%= acum %></p>
 							</div>
-							<div class="comprar">
-								<p ><a href="#">Comprar</a></p>
-							</div>
+								<form class="comprar" action="/products/productCart/<%= productUser.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">	
+									<button type="submit" class="comprar"><i class="fas fa-shopping-cart"></i> Comprar</button>
+								</form>
+							
 						</div>
 				
 				</div>
@@ -66,14 +71,18 @@
 			<section class="contenedor-novedades-productos">
 				<h3>DESTACADOS</h3>
 				<div class="products">
+					<% let contador = 0 %>
 					<% for(let producto of products) { %>
-						<% if (producto.states.state == "Destacado" && producto.id < 15) { %>
+						<% if (producto.states.state == "Destacado" && contador < 4) { %>
 					<article>
+						<% contador = contador + 1; %>
 						<div class="novedad-producto">
 							<p><%= producto.states.state%></p>
 						</div>
 						<img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
-						<div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+						<form class="icono-plus-prtoducto" action="/products/productCart/<%= producto.id%>" method="POST" enctype="multipart/form-data">
+                            <button type="submit" class="buttonCart"  ><i class="fas fa-plus"></i></button>
+                        </form>
 						<div class="nombre-producto">
 							<p><%= producto.name%></p>
 						</div>
@@ -86,6 +95,7 @@
 						</div>
 					</article>
 					  <% } %>
+						
 					<% } %>
 				</div>
 			</section>

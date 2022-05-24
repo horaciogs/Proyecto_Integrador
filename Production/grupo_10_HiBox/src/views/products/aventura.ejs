@@ -19,8 +19,13 @@
                             </div>
                             <img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
                             
-                            <form class="icono-plus-prtoducto" action="/products/productCart/<%= producto.id%>" method="POST" enctype="multipart/form-data">
-                                <i class="fas fa-plus"><button type="submit" class="delete"></button></i>
+                            <form class="icono-plus-prtoducto" 
+                                <% if (locals.isLogged) { %>
+                                    action="/products/productCart/<%= producto.id%>" method="POST" enctype="multipart/form-data"
+                                <% } else { %>
+                                    action="/users/login" method="GET"
+                                <% } %> >
+                                <button type="submit" class="buttonCart"  ><i class="fas fa-plus"></i></button>
                             </form>
                             
                             <div class="nombre-producto">

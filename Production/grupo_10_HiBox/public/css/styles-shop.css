@@ -8,19 +8,47 @@
     box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 10%);
 }
 
+.enviar {
+    margin: 3px;
+}
 .conteiner-shop h3 {
         text-align: center;
         color: #222;
         font-size: 2em;
         margin: 15px auto;
     }
+    .cantidad-input p{
+        margin-bottom: 10px;
+}
+    .cantidad-input input{
+        margin-top: -10px;
+        width: 56px;
+        padding: 8px;
+        border-radius: 30px;
+        color: #666;
+        border: solid 1px #666;
+}
+
+.comprar button{
+    border-radius: 30px;
+    width: 100%;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+    background-color: #7d92a5;
+    border: none !important;
+    transition: all 450ms;
+}
+
+.comprar button:hover {
+    background-color: #F95F62;
+}
 
 .conteiner-productos-shop {
-        display: flex;
         position: relative;
         background-color: white;
         text-align: center;
-        padding: 10px 0px;
+        padding: 10px;
         margin-left: 18px;
         margin-bottom: 15px;
         border: solid 1px rgb(207, 207, 207);
@@ -41,26 +69,30 @@
     flex-wrap: wrap;
     align-items: center;
 }
-.icono-trash-producto {
-    position: absolute;
+
+.delete {
+    border: none !important;
+    background-color: none !important;
+    color: gray;
     font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: gray;
-    text-align: center;
-    width: 40px;
-    right: 2%;
-    top: 15%;
     transition: all 450ms;
 }
-    
-.icono-trash-producto:hover {
-            color: #F95F62;
-        }
+.delete:hover {
+    color: #F95F62;
+}
+.icono-trash-producto {
+    position: absolute;
+    padding: 5px;
+    width: 40px;
+    right: -1%;
+    top: 3%;
+}
 
 .product-img-shop {
-            width: 30%;
+            width: 100%;
         }
 .nombre-producto-shop {
             text-align: left;
@@ -69,17 +101,19 @@
             font-size: 18px;
         }
         .precio-shop{
-            margin-left: 15px;
+            margin-top: 16px;
+            margin-left: 37px;
             font-size: 30px;
-            flex-grow: 5;
+            flex-grow: 8;
             text-align: right;
             color: #F95F62;
         }
         .discount-shop{
+            margin-top: 18px;
             font-weight: 100;
             margin-left: 10px;
             font-size: 22px;
-            flex-grow: 5;
+            flex-grow: 8;
             text-align: left;
             text-decoration: line-through;
             color: #b6b1af;
@@ -87,20 +121,26 @@
 
         .acceso-detalle-shop {
             margin-top: 15px;
-            text-align: left;
+            text-align: center;
             text-decoration: underline;
             color: #7d92a5;
             font-size: 1em;
+            text-decoration: underline;
         }
-        .acceso-detalle-shop:hover {
+        .acceso-detalle-shop a{
+            text-decoration: none;
+            color: #7d92a5;
+        }
+        .acceso-detalle-shop a:hover {
             color: #F95F62;
         }
         .conteiner-totals-shop {
-            width: 100%;
             display: flex;
             flex-direction: row;
-            justify-content: end;
+            justify-content: space-between;
+            width: 100%; 
             align-items: center;
+            padding: 10px;
             margin: 30px 0;
         }
         .comprar p a{
@@ -109,26 +149,52 @@
         }
         .comprar p {
             text-align: center;
-            background-color: #F95F62;
-            width: 120px;
+            background-color: #7d92a5;
+            width: 130px;
             padding: 10px;
             border-radius: 30px;
             transition: all 450ms;
         }
         
         .comprar:hover p {
-            background-color: #7d92a5;
-               
+            background-color: #F95F62;      
         }
         .label-total {
             color: #666;
             font-size: 16px;
             /* margin-left: 30px; */
-            margin-right: 70px;
+            /* margin-right: 70px; */
         }
         .total{
             font-size: 30px;
             color: #F95F62;
-            margin-right: 51px;
+            /* margin-right: 51px; */
         }
+
+        @media (min-width: 480px){
+
+            .conteiner-productos-shop {
+                display: flex;
+                position: relative;
+                }
+            .product-img-shop {
+                    width: 40%;
+                }
+                .acceso-detalle-shop {
+                    text-align: left;
+                }
+                .conteiner-totals-shop {
+                    justify-content: end;
+                }
+                .label-total {
+                    margin-right: 55px;
+                }
+                .total{
+                    margin-right: 51px;
+                }
+                .comprar p {
+                    width: 200px;
+
+                }
         
+        }

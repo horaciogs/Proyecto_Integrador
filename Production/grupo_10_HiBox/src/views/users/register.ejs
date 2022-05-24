@@ -16,6 +16,11 @@
                 <input type="text" id="firstName" name="firstName" placeholder="Nombre">
                 <input type="text" id="lastName" name="lastName" placeholder="Apellido">
                 <input type="text" id="email" name="email" placeholder="Correo electrónico">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="invalid">
+                        <p><%= errors.email.msg %> </p>
+                    </div>
+                <% } %>
                 <input type="password" id="password" name="password" placeholder="Contraseña">
                 <input type="password" id="confirmPsw" name="confirmPsw" placeholder="Confirmar contraseña">
                 <input type="file" id="img" name="img">

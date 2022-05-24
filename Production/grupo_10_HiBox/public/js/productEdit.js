@@ -61,10 +61,25 @@ window.onload = function() {
             estado.classList.add('is-valid');
             estado.classList.remove('is-invalid');
         };
+        if (img.value) {
+            fileName = img.value;
+            idxDot = fileName.lastIndexOf(".") + 1,
+            extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+            if (!(extFile == "jpg" || extFile == "jpeg" || extFile == "png")){
+                errors.push('Debe cargar una imagen en formato jpg/jpeg/png');
+                img.classList.add('is-invalid');
+
+            }
+        } else {
+            img.classList.add('is-valid');
+            img.classList.remove('is-invalid');
+        };
         if (detalle.value == "" || !regDetalle.test(detalle.value) || !detalle.value.trim()) {
             errors.push('Por favor verificar el campo Detalle');
             detalle.classList.add('is-invalid');
-        } else {
+        }  
+        
+        else {
             detalle.classList.add('is-valid');
             detalle.classList.remove('is-invalid');
         };

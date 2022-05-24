@@ -1,4 +1,4 @@
-<a href="https://wa.me/+5491134812957" target="_blank" style="position: fixed;bottom: 20px;right: 20px;z-index: 1049"><img src="/images/whatsapp.png" width="50" alt="HiBox Whatsapp" /></a>
+<a href="https://wa.me/+5491134812957?text=Buenos %20 días,%20¿En %20qué%20te%20podemos%20ayudar%20hoy?%20Gracias" target="_blank" style="position: fixed;bottom: 20px;right: 20px;z-index: 1049"><img src="/images/whatsapp.png" width="50" alt="HiBox Whatsapp" /></a>
 <header class="main-header">
     <section class="section-oferta">
         <p>ENVÍOS SIN CARGO A PARTIR DE $9000 + HASTA 6 CUOTAS SIN INTERÉS</p>
@@ -16,11 +16,11 @@
         
       <div class="nav-bar-header-left">
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="/">Inicio</a></li>
                 <li><a href="/products">Productos</a></li>
-                <li><a href="/about">About</a></li>
+                <li><a href="/about">Sobre Nosotros</a></li>
                 <li><a href="/faqs">FAQs</a></li>
-                <li><a href="/contact-us">Contact us</a></li>
+                <li><a href="/contact-us">Contacto</a></li>
             </ul>
         </div>
 
@@ -34,7 +34,7 @@
         <ul>
             <% if (locals.isLogged) { %>
                 <li class="imgView"><img src="<%= locals.userLogged.userImage %>"> 
-                    <% if(locals.userLogged.userPrivilege == 1) { %>
+                    <% if(locals.userLogged.userPrivilege > 0) { %>
                         <a href="/users/profile"><%= locals.userLogged.firstName %></a>
                     <% } else { %>
                         <a href="/users/profile/edit/<%= locals.userLogged.id %>"><%= locals.userLogged.firstName %></a>
@@ -56,7 +56,7 @@
     </div>
     <% if (locals.isLogged) { %>
         <div class="imgViewMobil">
-            <% if(locals.userLogged.userPrivilege == 1) { %>
+            <% if(locals.userLogged.userPrivilege > 0) { %>
                 <a href="/users/profile"> <img src="<%= locals.userLogged.userImage %>"> </a>
             <% } else { %>
                 <a href="/users/profile/edit/<%= locals.userLogged.id %>"> <img src="<%= locals.userLogged.userImage %>"> </a>
@@ -81,13 +81,13 @@
     </div>
     <div class="nav-header-mobile-sub">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/products">Products</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/products">Productos</a></li>
+            <li><a href="/about">Sobre Nosotros</a></li>
             <li><a href="/faqs">FAQs</a></li>
-            <li><a href="/contact-us">Contact us</a></li>
+            <li><a href="/contact-us">Contacto</a></li>
             <% if (locals.isLogged) { %>
-            <li><a href="/users/logout">LOGOUT</a></li>
+            <li><a href="/users/logout">Logout</a></li>
             <% } %>
         </ul>
     </div>

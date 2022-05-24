@@ -18,10 +18,32 @@
                 <input type="text" id="email" name="email" placeholder="Correo electrónico">
                 <input type="password" id="password" name="password" placeholder="Contraseña">
                 <input type="password" id="confirmPsw" name="confirmPsw" placeholder="Confirmar contraseña">
-                <div class="recuerdame">
-                    <input type="checkbox" name="userPrivileges" id="userPrivileges" value="on">
-                    <label for="recuerdame">Permisos de administrador</label>
-                </div>
+                <% if (locals.isLogged) { %>
+                    <% if(locals.userLogged.userPrivilege === 1) { %>
+                        <div class="recuerdame">
+                            <input type="checkbox" 
+                            <% if(user.userPrivilege) { %>
+                                checked="checked" disabled="disabled" 
+                                name="userPrivileges" id="userPrivileges">
+                                <input name="userPrivileges" type="hidden" value="on">
+                            <% } else { %>
+                                disabled="disabled" 
+                                name="userPrivileges" id="userPrivileges">
+                                <input name="userPrivileges" type="hidden">
+                            <% } %>
+                    <% } else if(locals.userLogged.userPrivilege === 2) { %>
+                        <div class="recuerdame">
+                            <input type="checkbox" 
+                            <% if(user.userPrivilege) { %>
+                                checked="checked"
+                                name="userPrivileges" id="userPrivileges" value="on">
+                            <% } else { %>
+                                name="userPrivileges" id="userPrivileges" value="on">
+                            <% } %>
+                    <% } %> 
+                        <label for="recuerdame">Permisos de administrador</label>
+                        </div>
+                <% } %>  
                 <input type="file" id="img" name="img">
                 <ul class="errores"></ul>
                

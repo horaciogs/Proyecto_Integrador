@@ -10,7 +10,7 @@
         <section class="conteiner-users">
             <% if (locals.isLogged) { %>
                 <% if(locals.userLogged.userPrivilege == 0  ) { %>
-                    <div class="cancel-button"><a href="javascript: history.go(-1)"><i class="fas fa-times"></i></a></div>
+                    <div class="cancel-button"><a href="/"><i class="fas fa-times"></i></a></div>
                 <% } %>
             <% } %>
             <% if (locals.isLogged) { %>
@@ -31,14 +31,32 @@
                 <input type="password" id="confirmPsw" name="confirmPsw" placeholder="******">
                 
                 
-                 <% if (locals.isLogged) { %>
-                    <% if(locals.userLogged.userPrivilege == 1) { %>
+                <% if (locals.isLogged) { %>
+                    <% if(locals.userLogged.userPrivilege === 1) { %>
                         <div class="recuerdame">
-                            <input type="checkbox" name="userPrivileges" id="userPrivileges" value="on">
-                            <label for="recuerdame">Permisos de administrador</label>
+                            <input type="checkbox" 
+                            <% if(user.userPrivilege) { %>
+                                checked="checked" disabled="disabled" 
+                                name="userPrivileges" id="userPrivileges">
+                                <input name="userPrivileges" type="hidden" value="on">
+                            <% } else { %>
+                                disabled="disabled" 
+                                name="userPrivileges" id="userPrivileges">
+                                <input name="userPrivileges" type="hidden">
+                            <% } %>
+                    <% } else if(locals.userLogged.userPrivilege === 2) { %>
+                        <div class="recuerdame">
+                            <input type="checkbox" 
+                            <% if(user.userPrivilege) { %>
+                                checked="checked"
+                                name="userPrivileges" id="userPrivileges" value="on">
+                            <% } else { %>
+                                name="userPrivileges" id="userPrivileges" value="on">
+                            <% } %>
+                    <% } %> 
+                        <label for="recuerdame">Permisos de administrador</label>
                         </div>
-                    <% } %>
-                <% } %>    
+                <% } %>  
                 <input type="file" id="img" name="img">
                 <ul class="errores"></ul>
 
